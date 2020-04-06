@@ -2,33 +2,15 @@
 
 ## Available verbs
 
-* GET
-
 > Path
 
 ```
 /offers-out
 ```
 
-## Fields
+* GET
 
-Field | Type | Description
------ | ---  | -----------
-id | int | Unique identifier
-name | string | The offer's name 
-description | string | HTML description 
-status | string | The status token for the offer
-discountCriteria | array | The criteria that must be met for a discount to be applied
-conditionsOfSale | object | The conditions of any sales made from products in this offer
-expiresOn | ?string | Date of the expiry of the offer. 
-created | string | Datetime that the offer was created
-currencyCode | string | Code of the currency that the offer is being made in
-statusLabel | string | Human-readable version of the status
-productCount | int | A count of the number of products in the offer.
-deliveryTermLabel | string | The label for the delivery term
-pricingTiers | array | The pricing tiers in the offer
-productColumns | array | The columns that are to be displayed on the offer's product table 
-productSections | array | The sections that products can be displayed in
+## Fields
 
 > Example Entity Response
 
@@ -69,6 +51,24 @@ productSections | array | The sections that products can be displayed in
   }
 }
 ```
+
+Field | Type | Description
+----- | ---  | -----------
+id | int | Unique identifier
+name | string | The offer's name 
+description | string | HTML description 
+status | string | The status token for the offer
+discountCriteria | array | The criteria that must be met for a discount to be applied
+conditionsOfSale | object | The conditions of any sales made from products in this offer
+expiresOn | ?string | Date of the expiry of the offer. 
+created | string | Datetime that the offer was created
+currencyCode | string | Code of the currency that the offer is being made in
+statusLabel | string | Human-readable version of the status
+productCount | int | A count of the number of products in the offer.
+deliveryTermLabel | string | The label for the delivery term
+pricingTiers | array | The pricing tiers in the offer
+productColumns | array | The columns that are to be displayed on the offer's product table 
+productSections | array | The sections that products can be displayed in
 
 ## Relationships
 
