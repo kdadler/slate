@@ -1,6 +1,6 @@
 # Companies
 
-## Available verbs
+## Available Verbs
 
 > Path
 

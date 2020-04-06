@@ -1,6 +1,6 @@
 # Offer Products
 
-## Available verbs
+## Available Verbs
 
 > Path
 

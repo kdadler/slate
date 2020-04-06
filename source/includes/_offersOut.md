@@ -1,6 +1,6 @@
 # Offers
 
-## Available verbs
+## Available Verbs
 
 > Path
 

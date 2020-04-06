@@ -1,6 +1,6 @@
 # Contacts
 
-## Available verbs
+## Available Verbs
 
 > Path
 
