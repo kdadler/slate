@@ -8,8 +8,15 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - companies.md
+  - contacts.md
   - offersOut
   - offerOutProducts
+  - negotiations.md
+  - negotiationProducts.md
+  - negotiationProductPrices.md
+  - salesOrders.md
+  - salesOrderProductPrices.md 
   - errors
 
 search: true

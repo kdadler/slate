@@ -5,7 +5,7 @@
 > Path
 
 ```
-/offer-out-products
+/offer-out-products(/{id})
 ```
 
 * GET
@@ -27,7 +27,7 @@
     "productName": "Example Shampoo 250ml",
     "unitPriceList": {"1": "1055", "2": "1050", "3": "1043"},
     "productColumnValues": {"1": "EN"},
-    "productSectionId": "1"
+    "productSectionId": 1
   },
   "relationships": {
     "offerOut": {"data": {"id":  "/offer-out-products/1", "type": "OfferOutProduct"}}
@@ -44,33 +44,21 @@ promoted | boolean | Is this product marked as promoted?
 ean | string | The product's EAN
 productName | string | The product's name
 unitPriceList | object | The unit price list, keyed by pricing tier ID (see offer out pricingTiers field)
-productColumnValues
-productSectionId
-
+productColumnValues | object | The values for each column, keyed by product column ID (see offer out productColumns field)
+productSectionId | integer/null | The product section that the product belongs to
 
 ## Relationships
 
 Name | Type | Description
 ---- | ---- | -----------
-offerOutProducts | Many to one | The products associated with the offer
-
-## Statuses
-
-Token | Label | Description
------ | ----- | -----------
-active | Active | The offer is currently active and available to be ordered from
-expired | Expired | The offer has passed its expiry date
-cancelled | Cancelled | The offer has been cancelled by the sales person 
+offerOut | One to many | The offer that the product is associated with.
 
 ## Index Parameters
 
 Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
-name | string | partial | null | Search against the offer out name
-status | string | exact | null | Specify the status of the offers out to be returned
+offerOut.id | int | exact | null | Specify the offer out the product must belong to
+productReference.productGroup.name | string | partial | null | Search against the product's name
+productReference.ean | string | partial | null | Search against the product's ean
 currency | string | exact | null | Specify the currency of the offers out to be returned
-order\[created] | string | exact | asc | Order the results by created date
-
-## Subresources
-
-`/offer-out-products`
+order\[productReference.productGroup.name] | string | exact | asc | Order the results by product name

@@ -5,7 +5,7 @@
 > Path
 
 ```
-/offers-out
+/offers-out(/{id})
 ```
 
 * GET
@@ -76,14 +76,6 @@ Name | Type | Description
 ---- | ---- | -----------
 offerOutProducts | Many to one | The products associated with the offer
 
-## Statuses
-
-Token | Label | Description
------ | ----- | -----------
-active | Active | The offer is currently active and available to be ordered from
-expired | Expired | The offer has passed its expiry date
-cancelled | Cancelled | The offer has been cancelled by the sales person 
-
 ## Index Parameters
 
 Name | Type | Match | Default | Description
@@ -96,3 +88,11 @@ order\[created] | string | exact | asc | Order the results by created date
 ## Subresources
 
 `/offer-out-products`
+
+## Statuses
+
+Token | Label | Description
+----- | ----- | -----------
+active | Active | The offer is currently active and available to be ordered from
+expired | Expired | The offer has passed its expiry date
+cancelled | Cancelled | The offer has been cancelled by the sales person 
