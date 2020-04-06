@@ -11,7 +11,7 @@ includes:
   - companies
   - contacts
   - offersOut
-  - offerOutProducts
+  - offerOutProductPrices
   - negotiations
   - negotiationProducts
   - negotiationProductPrices
