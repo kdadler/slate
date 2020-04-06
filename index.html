@@ -201,7 +201,7 @@
       <script src="javascripts/all-c5541673.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo-1e815a84.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -226,13 +223,18 @@
           </li>
           <li>
             <a href="#making-a-request" class="toc-h1 toc-link" data-title="Making a Request">Making a Request</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#offers" class="toc-h1 toc-link" data-title="Offers">Offers</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#available-verbs" class="toc-h2 toc-link" data-title="Available verbs">Available verbs</a>
+                  </li>
                   <li>
                     <a href="#fields" class="toc-h2 toc-link" data-title="Fields">Fields</a>
                   </li>
@@ -243,10 +245,10 @@
                     <a href="#statuses" class="toc-h2 toc-link" data-title="Statuses">Statuses</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#index-parameters" class="toc-h2 toc-link" data-title="Index Parameters">Index Parameters</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#subresources" class="toc-h2 toc-link" data-title="Subresources">Subresources</a>
                   </li>
               </ul>
           </li>
@@ -255,7 +257,6 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -265,8 +266,11 @@
         <h1 id='introduction'>Introduction</h1>
 <p>WIP version of the internal API docs for Yoda. Is REST.</p>
 <h1 id='making-a-request'>Making a Request</h1>
-<p>Al APIs prefixed with <code>/api</code></p>
-
+<blockquote>
+<p>base path</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{base_url}/api/{entity_type}(/{id})
+</code></pre>
 <blockquote>
 <p>Headers</p>
 </blockquote>
@@ -274,19 +278,53 @@
   </span><span class="s2">"Accept"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.api+json"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.api+json"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='authentication'>Authentication</h1>
+</span></code></pre><h2 id='authentication'>Authentication</h2>
 <p>TBC, possibly something like JWT?</p>
 <h1 id='offers'>Offers</h1>
 <blockquote>
-<p>path</p>
+<p>Path</p>
 </blockquote>
-
-<p><code>/offers-out</code></p>
-
+<pre class="highlight plaintext"><code>/offers-out
+</code></pre>
 <blockquote>
-<p>Available verbs:</p>
+<p>Example Entity Response</p>
 </blockquote>
-
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/offers-out/1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferOut"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My offer out"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;I am describing the offer&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"discountCriteria"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="s2">"percentage"</span><span class="p">:</span><span class="w">  </span><span class="mi">5</span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"conditionsOfSale"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"leadTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 weeks"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"expiresOn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currencyCode"</span><span class="p">:</span><span class="w">  </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"statusLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deliveryTermLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ex-works"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pricingTiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"lowerThreshold"</span><span class="p">:</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"upperThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="s2">"discountPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"lowerThreshold"</span><span class="p">:</span><span class="w">  </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s2">"upperThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w"> </span><span class="s2">"discountPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"lowerThreshold"</span><span class="p">:</span><span class="w">  </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="s2">"upperThreshold"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s2">"discountPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"productColumns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Language"</span><span class="p">,</span><span class="w"> </span><span class="s2">"weight"</span><span class="p">:</span><span class="w">  </span><span class="mi">4</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"productSections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fragrance"</span><span class="p">,</span><span class="w"> </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"offerOutProducts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/offer-out-products/1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferOutProduct"</span><span class="p">}},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/offer-out-products/2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferOutProduct"</span><span class="p">}}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='available-verbs'>Available verbs</h2>
 <ul>
 <li>GET</li>
 </ul>
@@ -325,7 +363,7 @@
 </tr>
 <tr>
 <td>conditionsOfSale</td>
-<td>array</td>
+<td>object</td>
 <td>The conditions of any sales made from products in this offer</td>
 </tr>
 <tr>
@@ -353,6 +391,26 @@
 <td>int</td>
 <td>A count of the number of products in the offer.</td>
 </tr>
+<tr>
+<td>deliveryTermLabel</td>
+<td>string</td>
+<td>The label for the delivery term</td>
+</tr>
+<tr>
+<td>pricingTiers</td>
+<td>array</td>
+<td>The pricing tiers in the offer</td>
+</tr>
+<tr>
+<td>productColumns</td>
+<td>array</td>
+<td>The columns that are to be displayed on the offer&#39;s product table</td>
+</tr>
+<tr>
+<td>productSections</td>
+<td>array</td>
+<td>The sections that products can be displayed in</td>
+</tr>
 </tbody></table>
 <h2 id='relationships'>Relationships</h2>
 <table><thead>
@@ -366,26 +424,6 @@
 <td>offerOutProducts</td>
 <td>Many to one</td>
 <td>The products associated with the offer</td>
-</tr>
-<tr>
-<td>deliveryTerm</td>
-<td>One to many</td>
-<td>The delivery term that applies to the offer</td>
-</tr>
-<tr>
-<td>pricingTiers</td>
-<td>Many to one</td>
-<td>The pricing tiers that apply to the offer</td>
-</tr>
-<tr>
-<td>productColumns</td>
-<td>Many to one</td>
-<td>The columns that are to be displayed on the offer&#39;s product table</td>
-</tr>
-<tr>
-<td>productSections</td>
-<td>Many to one</td>
-<td>The sections that products can be displayed in</td>
 </tr>
 </tbody></table>
 <h2 id='statuses'>Statuses</h2>
@@ -412,128 +450,47 @@
 <td>The offer has been cancelled by the sales person</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<h2 id='index-parameters'>Index Parameters</h2>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Name</th>
+<th>Type</th>
+<th>Match</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>name</td>
+<td>string</td>
+<td>partial</td>
+<td>null</td>
+<td>Search against the offer out name</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>status</td>
+<td>string</td>
+<td>exact</td>
+<td>null</td>
+<td>Specify the status of the offers out to be returned</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>exact</td>
+<td>null</td>
+<td>Specify the currency of the offers out to be returned</td>
+</tr>
+<tr>
+<td>order[created]</td>
+<td>string</td>
+<td>exact</td>
+<td>asc</td>
+<td>Order the results by created date</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
+<h2 id='subresources'>Subresources</h2>
+<p><code>/offer-out-products</code></p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
@@ -596,10 +553,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
