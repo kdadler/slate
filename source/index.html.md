@@ -9,6 +9,7 @@ toc_footers:
 
 includes:
   - offersOut
+  - offerOutProducts
   - errors
 
 search: true
