@@ -1,4 +1,4 @@
-# Baskets (Negotiations)
+# Basket Product Prices (Negotiation Product Prices)
 
 ## Available Verbs
 
