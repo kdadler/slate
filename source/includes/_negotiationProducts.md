@@ -1,15 +1,15 @@
 # Basket Products (Negotiation Products)
 
-This is essentially a join entity between products and negotiations. THe only interaction with this entity is via a
-bulk update subresource.
-
-## Available Verbs
-
 > Path
 
 ```
 /negotiation-products/bulk
 ```
+
+This is essentially a join entity between products and negotiations. THe only interaction with this entity is via the
+bulk update subresource. For all other actions, requests must be made to the negotiation product price endpoints.
+
+## Available Verbs
 
 * POST
 

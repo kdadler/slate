@@ -1,12 +1,14 @@
 # Offer Products
 
-## Available Verbs
-
 > Path
 
 ```
 /offer-out-products(/{id})
 ```
+
+The products associated with an offer. These can be grouped by section.
+
+## Available Verbs
 
 * GET
 

@@ -1,12 +1,14 @@
 # Basket Product Prices (Negotiation Product Prices)
 
-## Available Verbs
-
 > Path
 
 ```
 /negotiation-product-prices(/{id})
 ```
+
+The list of prices against each product in a negotiation. This allows each product to have more than one price.
+
+## Available Verbs
 
 * GET
 * PUT

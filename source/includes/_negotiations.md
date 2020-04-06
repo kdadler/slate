@@ -1,17 +1,18 @@
 # Baskets (Negotiations)
 
-Negotiation is the backend terminology to be used for baskets. It is expected that Basket will be used in all places
-in the Portal except when directly making contact with Yoda.
-
-A contact may only have 1 active negotiation at any given time.
-
-## Available Verbs
-
 > Path
 
 ```
 /negotiations(/{id})
 ```
+
+Negotiation is the backend terminology to be used for baskets. It is expected that Basket will be used in all places
+in the Portal except when directly making contact with Yoda.
+
+A basket is where users can add products that they are looking to buy, or are in the process of negotiating on. A
+contact may only have 1 active negotiation at any given time.
+
+## Available Verbs
 
 * GET
 * POST

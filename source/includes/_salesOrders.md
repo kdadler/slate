@@ -1,12 +1,16 @@
 # Sales Orders
 
-## Available Verbs
-
 > Path
 
 ```
 /sales-orders(/{id})
 ```
+
+Orders that are currently being processed, or have been completed.
+
+## Available Verbs
+
+
 
 * GET
 

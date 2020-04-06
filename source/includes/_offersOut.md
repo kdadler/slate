@@ -1,12 +1,14 @@
 # Offers
 
-## Available Verbs
-
 > Path
 
 ```
 /offers-out(/{id})
 ```
+
+Offers are product availability lists that are sent out to current or prospective customers.
+
+## Available Verbs
 
 * GET
 

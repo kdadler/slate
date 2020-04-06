@@ -1,12 +1,15 @@
 # Sales Order Product Prices
 
-## Available Verbs
-
 > Path
 
 ```
 /sales-order-product-prices(/{id})
 ```
+
+Product prices that are associated with sales orders. As with negotiation products, each product in a sales order can
+have multiple prices associated with it.
+
+## Available Verbs
 
 * GET
 

@@ -1,12 +1,15 @@
 # Contacts
 
-## Available Verbs
-
 > Path
 
 ```
 /contacts(/{id})
 ```
+
+Contacts are people that exist within companies. These records hold information relating to these people, for example
+their names and contact information.
+
+## Available Verbs
 
 * GET
 

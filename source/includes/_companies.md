@@ -1,12 +1,15 @@
 # Companies
 
-## Available Verbs
-
 > Path
 
 ```
 /companies(/{id})
 ```
+
+Companies hold records for each company is either a Beautynet customer or supplier. Each company is broken down into
+contacts, which are the specific points of contact within a company.
+
+## Available Verbs
 
 * GET
 
