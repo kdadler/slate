@@ -253,6 +253,29 @@
               </ul>
           </li>
           <li>
+            <a href="#offer-products" class="toc-h1 toc-link" data-title="Offer Products">Offer Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#available-verbs" class="toc-h2 toc-link" data-title="Available verbs">Available verbs</a>
+                  </li>
+                  <li>
+                    <a href="#fields" class="toc-h2 toc-link" data-title="Fields">Fields</a>
+                  </li>
+                  <li>
+                    <a href="#relationships" class="toc-h2 toc-link" data-title="Relationships">Relationships</a>
+                  </li>
+                  <li>
+                    <a href="#statuses" class="toc-h2 toc-link" data-title="Statuses">Statuses</a>
+                  </li>
+                  <li>
+                    <a href="#index-parameters" class="toc-h2 toc-link" data-title="Index Parameters">Index Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#subresources" class="toc-h2 toc-link" data-title="Subresources">Subresources</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -280,12 +303,100 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='authentication'>Authentication</h2>
 <p>TBC, possibly something like JWT?</p>
-<h1 id='offers'>Offers</h1>
+<h1 id='offers'>Offers</h1><h2 id='available-verbs'>Available verbs</h2>
+<ul>
+<li>GET</li>
+</ul>
+
 <blockquote>
 <p>Path</p>
 </blockquote>
 <pre class="highlight plaintext"><code>/offers-out
-</code></pre>
+</code></pre><h2 id='fields'>Fields</h2>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The offer&#39;s name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>HTML description</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>The status token for the offer</td>
+</tr>
+<tr>
+<td>discountCriteria</td>
+<td>array</td>
+<td>The criteria that must be met for a discount to be applied</td>
+</tr>
+<tr>
+<td>conditionsOfSale</td>
+<td>object</td>
+<td>The conditions of any sales made from products in this offer</td>
+</tr>
+<tr>
+<td>expiresOn</td>
+<td>?string</td>
+<td>Date of the expiry of the offer.</td>
+</tr>
+<tr>
+<td>created</td>
+<td>string</td>
+<td>Datetime that the offer was created</td>
+</tr>
+<tr>
+<td>currencyCode</td>
+<td>string</td>
+<td>Code of the currency that the offer is being made in</td>
+</tr>
+<tr>
+<td>statusLabel</td>
+<td>string</td>
+<td>Human-readable version of the status</td>
+</tr>
+<tr>
+<td>productCount</td>
+<td>int</td>
+<td>A count of the number of products in the offer.</td>
+</tr>
+<tr>
+<td>deliveryTermLabel</td>
+<td>string</td>
+<td>The label for the delivery term</td>
+</tr>
+<tr>
+<td>pricingTiers</td>
+<td>array</td>
+<td>The pricing tiers in the offer</td>
+</tr>
+<tr>
+<td>productColumns</td>
+<td>array</td>
+<td>The columns that are to be displayed on the offer&#39;s product table</td>
+</tr>
+<tr>
+<td>productSections</td>
+<td>array</td>
+<td>The sections that products can be displayed in</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Example Entity Response</p>
 </blockquote>
@@ -322,6 +433,112 @@
       </span><span class="p">{</span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/offer-out-products/1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferOutProduct"</span><span class="p">}},</span><span class="w">
       </span><span class="p">{</span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/offer-out-products/2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferOutProduct"</span><span class="p">}}</span><span class="w">
     </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='relationships'>Relationships</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offerOutProducts</td>
+<td>Many to one</td>
+<td>The products associated with the offer</td>
+</tr>
+</tbody></table>
+<h2 id='statuses'>Statuses</h2>
+<table><thead>
+<tr>
+<th>Token</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>active</td>
+<td>Active</td>
+<td>The offer is currently active and available to be ordered from</td>
+</tr>
+<tr>
+<td>expired</td>
+<td>Expired</td>
+<td>The offer has passed its expiry date</td>
+</tr>
+<tr>
+<td>cancelled</td>
+<td>Cancelled</td>
+<td>The offer has been cancelled by the sales person</td>
+</tr>
+</tbody></table>
+<h2 id='index-parameters'>Index Parameters</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Match</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>partial</td>
+<td>null</td>
+<td>Search against the offer out name</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>exact</td>
+<td>null</td>
+<td>Specify the status of the offers out to be returned</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>exact</td>
+<td>null</td>
+<td>Specify the currency of the offers out to be returned</td>
+</tr>
+<tr>
+<td>order[created]</td>
+<td>string</td>
+<td>exact</td>
+<td>asc</td>
+<td>Order the results by created date</td>
+</tr>
+</tbody></table>
+<h2 id='subresources'>Subresources</h2>
+<p><code>/offer-out-products</code></p>
+<h1 id='offer-products'>Offer Products</h1>
+<blockquote>
+<p>Path</p>
+</blockquote>
+<pre class="highlight plaintext"><code>/offer-out-products
+</code></pre>
+<blockquote>
+<p>Example Entity Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/offers-out-products/1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferOutProduct"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseUnitPrice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1055"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"new"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"promoted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ean"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567891011"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Shampoo 250ml"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unitPriceList"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1055"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1050"</span><span class="p">,</span><span class="w"> </span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1043"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"productColumnValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EN"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"productSectionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"offerOut"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/offer-out-products/1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferOutProduct"</span><span class="p">}}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='available-verbs'>Available verbs</h2>
