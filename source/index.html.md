@@ -8,13 +8,12 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - companies
   - contacts
-  - offersOut
-  - offerOutProductPrices
-  - negotiations
-  - negotiationProducts
-  - negotiationProductPrices
+  - offers
+  - offerLines
+  - baskets
+  - basketLines
+  - unitPriceNegotiations
   - salesOrders
   - salesOrderProductPrices 
   - errors

@@ -9,11 +9,11 @@
 Contacts are people that exist within companies. These records hold information relating to these people, for example
 their names and contact information.
 
-## Available Verbs
+## Contact Verbs
 
 * GET
 
-## Fields
+## Contact Fields
 
 > Example Entity Response
 
@@ -25,10 +25,26 @@ their names and contact information.
     "id": 1,
     "fullName": "Billy Crystal",
     "emailAddress": "billy@gmail.com",
-    "phoneNumber": "0129827394"
-  },
-  "relationships": {
-    "company": {"data": {"id":  "/company/1", "type": "Company"}}
+    "phoneNumber": "0129827394",
+    "companyName": "Monsters Inc",
+    "companyNumber": "0000000000",
+    "vatNumber": "0000000000",
+    "invoiceAddress": {
+      "addressLineOne": "1 Monster Road", 
+      "addressLineTwo": "Monster Town", 
+      "townCity": "Monster City", 
+      "region": "Monster County", 
+      "postcode": "MM1 1EE", 
+      "country": "UK"
+    },
+    "deliveryAddress": {
+      "addressLineOne": "1 Monster Road", 
+      "addressLineTwo": "Monster Town", 
+      "townCity": "Monster City", 
+      "region": "Monster County", 
+      "postcode": "MM1 1EE", 
+      "country": "UK"
+    }
   }
 }
 ```
@@ -38,15 +54,14 @@ Field | Type | Description
 id | int | Unique identifier
 fullName | string | Full name of the contact
 emailAddress | string | The contact's email address
-phoneNumber | string | The contact's phone number.
+phoneNumber | string | The contact's phone number
+companyName | string | The name of the company the contact belongs to
+companyNumber | string | the company number for the company the contact belongs to
+vatNumber | string | The VAT number for the company the contact belongs to
+invoiceAddress | object | The invoice address for the contact's company
+deliveryAddress | object | The delivery address for the contact's company
 
-## Relationships
-
-Name | Type | Description
----- | ---- | -----------
-company | One to many | The company that the contact belongs to.
-
-## Index Parameters
+## Contact Index Parameters
 
 Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
