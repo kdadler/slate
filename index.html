@@ -361,6 +361,9 @@
                     <a href="#sales-order-line-fields" class="toc-h2 toc-link" data-title="Sales Order Line Fields">Sales Order Line Fields</a>
                   </li>
                   <li>
+                    <a href="#sales-order-line-relationships" class="toc-h2 toc-link" data-title="Sales Order Line Relationships">Sales Order Line Relationships</a>
+                  </li>
+                  <li>
                     <a href="#sales-order-line-index-parameters" class="toc-h2 toc-link" data-title="Sales Order Line Index Parameters">Sales Order Line Index Parameters</a>
                   </li>
               </ul>
@@ -408,10 +411,9 @@
 <blockquote>
 <p>Path</p>
 </blockquote>
-<pre class="highlight plaintext"><code>/contacts(/{id})
+<pre class="highlight plaintext"><code>/contacts
 </code></pre>
-<p>Contacts are people that exist within companies. These records hold information relating to these people, for example
-their names and contact information.</p>
+<p>Points of contacts with customers/suppliers. Client portal registered users will each have a contact record associated with them.</p>
 <h2 id='contact-verbs'>Contact Verbs</h2>
 <ul>
 <li>GET</li>
@@ -485,7 +487,7 @@ their names and contact information.</p>
 <tr>
 <td>companyNumber</td>
 <td>string</td>
-<td>the company number for the company the contact belongs to</td>
+<td>The company number for the company the contact belongs to</td>
 </tr>
 <tr>
 <td>vatNumber</td>
@@ -507,7 +509,7 @@ their names and contact information.</p>
 <blockquote>
 <p>Path</p>
 </blockquote>
-<pre class="highlight plaintext"><code>/offers(/{id})
+<pre class="highlight plaintext"><code>/offers
 </code></pre>
 <p>Offers are product availability lists that are sent out to current or prospective customers.</p>
 <h2 id='offer-available-verbs'>Offer Available Verbs</h2>
@@ -752,7 +754,7 @@ their names and contact information.</p>
 <blockquote>
 <p>Path</p>
 </blockquote>
-<pre class="highlight plaintext"><code>/offer-lines(/{id})
+<pre class="highlight plaintext"><code>/offer-lines
 </code></pre>
 <p>The lines associated with an offer.</p>
 <h2 id='offer-line-available-verbs'>Offer Line Available Verbs</h2>
@@ -895,7 +897,7 @@ their names and contact information.</p>
 <blockquote>
 <p>Path</p>
 </blockquote>
-<pre class="highlight plaintext"><code>/baskets(/{id})
+<pre class="highlight plaintext"><code>/baskets
 </code></pre>
 <p>A basket is where users can add products that they are looking to buy, or are in the process of negotiating on. A
 contact may only have 1 active basket at any given time.</p>
@@ -1061,7 +1063,7 @@ contact may only have 1 active basket at any given time.</p>
 <blockquote>
 <p>Path</p>
 </blockquote>
-<pre class="highlight plaintext"><code>/basket-lines(/{id})
+<pre class="highlight plaintext"><code>/basket-lines
 </code></pre>
 <p>Lines for a basket.</p>
 <h2 id='basket-line-available-verbs'>Basket Line Available Verbs</h2>
@@ -1279,8 +1281,8 @@ contact may only have 1 active basket at any given time.</p>
 <p>Example Response Body</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/basket-lines/1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BasketLine"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/unit-price-negotiations/1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UnitPriceNegotiation"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"unitPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1043"</span><span class="p">,</span><span class="w">
@@ -1309,9 +1311,10 @@ contact may only have 1 active basket at any given time.</p>
 <p>Example POST Body</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"basket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/baskets/1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"offerLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/offer-lines/1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"unitQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w">
+  </span><span class="s2">"basketLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/basketLine/1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"unitPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My comment"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customerCreated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -1349,7 +1352,7 @@ contact may only have 1 active basket at any given time.</p>
 <tr>
 <td>customerCreated</td>
 <td>boolean</td>
-<td>No</td>
+<td>Yes</td>
 <td>Was this created by the customer?</td>
 </tr>
 <tr>
@@ -1437,7 +1440,7 @@ contact may only have 1 active basket at any given time.</p>
 <blockquote>
 <p>Path</p>
 </blockquote>
-<pre class="highlight plaintext"><code>/sales-orders(/{id})
+<pre class="highlight plaintext"><code>/sales-orders
 </code></pre>
 <p>Orders that are currently being processed, or have been completed.</p>
 <h2 id='sales-order-available-verbs'>Sales Order Available Verbs</h2>
@@ -1628,7 +1631,7 @@ contact may only have 1 active basket at any given time.</p>
 <blockquote>
 <p>Path</p>
 </blockquote>
-<pre class="highlight plaintext"><code>/sales-order-lines(/{id})
+<pre class="highlight plaintext"><code>/sales-order-lines
 </code></pre>
 <p>Sales order lines.</p>
 <h2 id='sales-order-line-available-verbs'>Sales Order Line Available Verbs</h2>
@@ -1648,7 +1651,8 @@ contact may only have 1 active basket at any given time.</p>
     </span><span class="s2">"unitQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ean"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567891011"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An example product name 500ml"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -1682,6 +1686,20 @@ contact may only have 1 active basket at any given time.</p>
 <td>name</td>
 <td>string</td>
 <td>The name of the line</td>
+</tr>
+</tbody></table>
+<h2 id='sales-order-line-relationships'>Sales Order Line Relationships</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>salesOrder</td>
+<td>One to many</td>
+<td>The sales order that the line is associated with.</td>
 </tr>
 </tbody></table>
 <h2 id='sales-order-line-index-parameters'>Sales Order Line Index Parameters</h2>
@@ -1751,18 +1769,12 @@ contact may only have 1 active basket at any given time.</p>
 <li>Notifications</li>
 <li>Customer input data</li>
 <li>Customer usage data</li>
-<li>Price negotiation</li>
 <li>File (PDF/XLSX) generation</li>
 <li>Registration</li>
-<li>Account information change request</li>
 <li>Product photos</li>
 </ul>
 <h2 id='missing-data'>Missing data:</h2>
 <ul>
-<li>Negotiations: Calculated totals</li>
-<li>Negotiation product prices: Calculated totals, negotiation relationship</li>
-<li>Sales order: Calculated totals</li>
-<li>Sales order product prices: Calculated totals, Filters, Sales order relationship</li>
 <li>Customer: Client user account ID</li>
 </ul>
 
