@@ -3,7 +3,7 @@
 > Path
 
 ```
-/basket-lines(/{id})
+/basket-lines
 ```
 
 Lines for a basket.

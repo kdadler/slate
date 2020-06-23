@@ -3,7 +3,7 @@
 > Path
 
 ```
-/sales-order-lines(/{id})
+/sales-order-lines
 ```
 
 Sales order lines.
@@ -26,7 +26,8 @@ Sales order lines.
     "unitQuantity": 100,
     "ean": "1234567891011",
     "name": "An example product name 500ml"
-  }
+  },
+  "relationships": {}
 }
 ```
 
@@ -37,6 +38,12 @@ sellUnitPrice | object | The amount that each unit is being sold for
 unitQuantity | int | The quantity of units being supplied 
 ean | string | The EAN of the product being sold
 name | string | The name of the line
+
+## Sales Order Line Relationships
+
+Name | Type | Description
+---- | ---- | -----------
+salesOrder | One to many | The sales order that the line is associated with.
 
 ## Sales Order Line Index Parameters
 

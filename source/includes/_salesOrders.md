@@ -3,7 +3,7 @@
 > Path
 
 ```
-/sales-orders(/{id})
+/sales-orders
 ```
 
 Orders that are currently being processed, or have been completed.

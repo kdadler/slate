@@ -3,7 +3,7 @@
 > Path
 
 ```
-/baskets(/{id})
+/baskets
 ```
 
 A basket is where users can add products that they are looking to buy, or are in the process of negotiating on. A

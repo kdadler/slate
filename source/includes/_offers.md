@@ -3,7 +3,7 @@
 > Path
 
 ```
-/offers(/{id})
+/offers
 ```
 
 Offers are product availability lists that are sent out to current or prospective customers.

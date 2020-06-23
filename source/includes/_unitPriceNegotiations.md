@@ -19,8 +19,8 @@ Per line unit price negotiations for baskets.
 
 ```json
 {
-  "id": "/api/basket-lines/1",
-  "type": "BasketLine",
+  "id": "/api/unit-price-negotiations/1",
+  "type": "UnitPriceNegotiation",
   "attributes": {
     "id": 1,
     "unitPrice": "1043",
@@ -50,9 +50,10 @@ Per line unit price negotiations for baskets.
 
 ```json
 {
-  "basket": "/api/baskets/1",
-  "offerLine": "/api/offer-lines/1",
-  "unitQuantity": 400
+  "basketLine": "/api/basketLine/1",
+  "unitPrice": "400",
+  "comment": "My comment",
+  "customerCreated": true
 }
 ```
 
@@ -62,7 +63,7 @@ id | int | No | Unique identifier
 unitPrice | string | Yes | The unit price that has been requested
 status | string | No | The status of the request
 comment | string | Yes | The comment in support of the requested unit price
-customerCreated | boolean | No | Was this created by the customer?
+customerCreated | boolean | Yes | Was this created by the customer?
 createdByName | string&#124;null | No | The name of the salesPerson that created the entity. If customerCreated is true, this will be null 
 created | string | No | Datetime that the basket was created 
 

@@ -3,7 +3,7 @@
 > Path
 
 ```
-/offer-lines(/{id})
+/offer-lines
 ```
 
 The lines associated with an offer.

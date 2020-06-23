@@ -3,11 +3,10 @@
 > Path
 
 ```
-/contacts(/{id})
+/contacts
 ```
 
-Contacts are people that exist within companies. These records hold information relating to these people, for example
-their names and contact information.
+Points of contacts with customers/suppliers. Client portal registered users will each have a contact record associated with them.
 
 ## Contact Verbs
 
@@ -56,7 +55,7 @@ fullName | string | Full name of the contact
 emailAddress | string | The contact's email address
 phoneNumber | string | The contact's phone number
 companyName | string | The name of the company the contact belongs to
-companyNumber | string | the company number for the company the contact belongs to
+companyNumber | string | The company number for the company the contact belongs to
 vatNumber | string | The VAT number for the company the contact belongs to
 invoiceAddress | object | The invoice address for the contact's company
 deliveryAddress | object | The delivery address for the contact's company
