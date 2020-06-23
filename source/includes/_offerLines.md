@@ -19,25 +19,25 @@ The lines associated with an offer.
 ```json
 {
   "id": "/api/offer-lines/1",
-  "type": "OfferOutLine",
+  "type": "OfferLine",
   "attributes": {
     "id": 1,
     "ean": "1234567891011",
     "name": "Example Shampoo 250ml",
     "baseUnitPrice": {"value": "1055"},
     "unitPriceList": {"1": "1055", "2": "1050", "3": "1043"},
-    "new": true,
-    "promoted": false,
+    "new": false,
+    "promoted": true,
     "promotedLabel": "Favourite",
     "columnValues": {"1": "EN"},
     "unitsPerCase": 15,
     "sectionId": 1
   },
   "relationships": {
-    "offerOut": {
+    "offer": {
       "data": {
-        "id":  "/offers/1",
-        "type": "OfferOut"
+        "id":  "/api/offers/1",
+        "type": "Offer"
       }
     }
   }
@@ -53,7 +53,7 @@ baseUnitPrice | object | The base unit price value of the line
 unitPriceList | object | The unit price list, keyed by pricing tier ID (see offer out pricingTiers field)
 new | boolean | Is this line marked as new?
 promoted | boolean | Is this line marked as promoted?
-promotedLabel | boolean&#124;null | Label to display for promoted lines?
+promotedLabel | boolean&#124;null | Label to display for promoted lines
 columnValues | object | The values for each column, keyed by column ID (see the offer columns field)
 unitsPerCase | int | The number of units per case for the line
 sectionId | integer/null | The section that the line belongs to
@@ -62,11 +62,11 @@ sectionId | integer/null | The section that the line belongs to
 
 Name | Type | Description
 ---- | ---- | -----------
-offerOut | One to many | The offer that the line is associated with.
+offer | One to many | The offer that the line is associated with.
 
 ## Offer Line Index Parameters
 
 Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
-offerOut | string | exact | null | Specify the offer out the line must belong to
+offer | string | exact | null | Specify the offer the line must belong to
 order\[name] | string | exact | asc | Order the results by line name

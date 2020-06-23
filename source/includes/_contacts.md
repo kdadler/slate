@@ -60,10 +60,3 @@ companyNumber | string | the company number for the company the contact belongs 
 vatNumber | string | The VAT number for the company the contact belongs to
 invoiceAddress | object | The invoice address for the contact's company
 deliveryAddress | object | The delivery address for the contact's company
-
-## Contact Index Parameters
-
-Name | Type | Match | Default | Description
----- | ---- | ----- | ------- | -----------
-fullName | string | partial | null | Search against the company's name
-company | int | exact | null | The ID of the company that the contact belongs to

@@ -8,13 +8,13 @@
 
 Orders that are currently being processed, or have been completed.
 
-## Available Verbs
+## Sales Order Available Verbs
 
 
 
 * GET
 
-## Fields
+## Sales Order Fields
 
 > Example Entity Response
 
@@ -52,7 +52,7 @@ invoiceId | string/null | The ID of the order's invoice
 invoiceDate | string/null | The date of the creation of the invoice
 paymentDate | string/null | The date of the payment of the invoice
 
-## Index Parameters
+## Sales Order Index Parameters
 
 Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
@@ -60,12 +60,12 @@ contact | string | exact | null | The contact that the sales order must be assoc
 status | string | exact | null | Specify the status of the sales orders to be returned
 order\[created] | string | exact | asc | Order the results by created date
 
-## Subresources
+## Sales Order Subresources
 
 `/product_prices`
 `/calculated-values`
 
-## Statuses
+## Sales Order Statuses
 
 Token | Label | Description
 ----- | ----- | -----------

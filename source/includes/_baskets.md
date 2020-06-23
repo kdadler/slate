@@ -87,7 +87,7 @@ contact may only have 1 active basket at any given time.
 
 ```json
 {
-  "contact": "/api/contact/1",
+  "contact": "/api/contacts/1",
   "offerLines": [
     "/api/offer-lines/1",
     "/api/offer-lines/2",
@@ -100,13 +100,12 @@ Field | Type | Writeable | Description
 ----- | ---  | --------- | -----------
 id | int | No | Unique identifier
 currencyCode | string | No | The currency of the basket
-conditionsOfSale | object | No | The conditions of sale for the basket, keyed by offer out ID
+current | boolean | No | Is the basket current for the user?
 offers | object | No | A set of offer data for the basket. This includes the name, ID, conditions of sale and totals.
 totals | object | No | The totals for the basket.
-current | boolean | No | Is the basket current for the user?
 created | string | No | Datetime that the basket was created
 contact | string | Yes | The IRI of the contact that a new basket is to belong to
-offerLines | array | Yes | List of offer out product IRIs that the basket is to be created with
+offerLines | array | Yes | List of offer line IRIs that the basket is to be created with
 
 ## Basket Relationships
 
