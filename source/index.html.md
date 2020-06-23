@@ -15,7 +15,7 @@ includes:
   - basketLines
   - unitPriceNegotiations
   - salesOrders
-  - salesOrderProductPrices 
+  - salesOrderLines 
   - errors
   - ztodo
 

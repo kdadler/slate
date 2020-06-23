@@ -26,6 +26,7 @@ Orders that are currently being processed, or have been completed.
     "id": "SO0000001",
     "created": "2020-04-06T09:36:35.018Z",
     "status": 60,
+    "currencyCode": "GBP",
     "conditionsOfSale": {"leadTime": "2 weeks"},
     "taxRate": 20,
     "cancellationReason": null,
@@ -43,6 +44,7 @@ Field | Type | Description
 id | string | Unique identifier
 created | string | Datetime that the sales order was created
 status | int | The status of the order
+currencyCode | string | The currency of the order
 conditionsOfSale | object | The conditions of sale for the order
 taxRate | int | The tax rate applied to the order
 cancellationReason | string/null | The reason for the cancellation of the order
