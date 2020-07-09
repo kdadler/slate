@@ -267,9 +267,6 @@
                     <a href="#offer-line-fields" class="toc-h2 toc-link" data-title="Offer Line Fields">Offer Line Fields</a>
                   </li>
                   <li>
-                    <a href="#offer-line-relationships" class="toc-h2 toc-link" data-title="Offer Line Relationships">Offer Line Relationships</a>
-                  </li>
-                  <li>
                     <a href="#offer-line-index-parameters" class="toc-h2 toc-link" data-title="Offer Line Index Parameters">Offer Line Index Parameters</a>
                   </li>
               </ul>
@@ -284,9 +281,6 @@
                     <a href="#basket-fields" class="toc-h2 toc-link" data-title="Basket Fields">Basket Fields</a>
                   </li>
                   <li>
-                    <a href="#basket-relationships" class="toc-h2 toc-link" data-title="Basket Relationships">Basket Relationships</a>
-                  </li>
-                  <li>
                     <a href="#basket-subresources" class="toc-h2 toc-link" data-title="Basket Subresources">Basket Subresources</a>
                   </li>
               </ul>
@@ -299,9 +293,6 @@
                   </li>
                   <li>
                     <a href="#basket-line-fields" class="toc-h2 toc-link" data-title="Basket Line Fields">Basket Line Fields</a>
-                  </li>
-                  <li>
-                    <a href="#basket-line-relationships" class="toc-h2 toc-link" data-title="Basket Line Relationships">Basket Line Relationships</a>
                   </li>
                   <li>
                     <a href="#basket-line-index-parameters" class="toc-h2 toc-link" data-title="Basket Line Index Parameters">Basket Line Index Parameters</a>
@@ -321,9 +312,6 @@
                     <a href="#unit-price-negotiation-fields" class="toc-h2 toc-link" data-title="Unit Price Negotiation Fields">Unit Price Negotiation Fields</a>
                   </li>
                   <li>
-                    <a href="#unit-price-negotiation-relationships" class="toc-h2 toc-link" data-title="Unit Price Negotiation Relationships">Unit Price Negotiation Relationships</a>
-                  </li>
-                  <li>
                     <a href="#unit-price-negotiation-index-parameters" class="toc-h2 toc-link" data-title="Unit Price Negotiation Index Parameters">Unit Price Negotiation Index Parameters</a>
                   </li>
                   <li>
@@ -341,10 +329,10 @@
                     <a href="#sales-order-fields" class="toc-h2 toc-link" data-title="Sales Order Fields">Sales Order Fields</a>
                   </li>
                   <li>
-                    <a href="#sales-order-index-parameters" class="toc-h2 toc-link" data-title="Sales Order Index Parameters">Sales Order Index Parameters</a>
+                    <a href="#sales-order-total-fields" class="toc-h2 toc-link" data-title="Sales Order Total Fields">Sales Order Total Fields</a>
                   </li>
                   <li>
-                    <a href="#sales-order-subresources" class="toc-h2 toc-link" data-title="Sales Order Subresources">Sales Order Subresources</a>
+                    <a href="#sales-order-index-parameters" class="toc-h2 toc-link" data-title="Sales Order Index Parameters">Sales Order Index Parameters</a>
                   </li>
                   <li>
                     <a href="#sales-order-statuses" class="toc-h2 toc-link" data-title="Sales Order Statuses">Sales Order Statuses</a>
@@ -361,10 +349,18 @@
                     <a href="#sales-order-line-fields" class="toc-h2 toc-link" data-title="Sales Order Line Fields">Sales Order Line Fields</a>
                   </li>
                   <li>
-                    <a href="#sales-order-line-relationships" class="toc-h2 toc-link" data-title="Sales Order Line Relationships">Sales Order Line Relationships</a>
+                    <a href="#sales-order-line-index-parameters" class="toc-h2 toc-link" data-title="Sales Order Line Index Parameters">Sales Order Line Index Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#usage-data" class="toc-h1 toc-link" data-title="Usage Data">Usage Data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#usage-data-available-verbs" class="toc-h2 toc-link" data-title="Usage Data Available Verbs">Usage Data Available Verbs</a>
                   </li>
                   <li>
-                    <a href="#sales-order-line-index-parameters" class="toc-h2 toc-link" data-title="Sales Order Line Index Parameters">Sales Order Line Index Parameters</a>
+                    <a href="#usage-data-fields" class="toc-h2 toc-link" data-title="Usage Data Fields">Usage Data Fields</a>
                   </li>
               </ul>
           </li>
@@ -524,7 +520,8 @@
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/offers/OF-000-001"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offer"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OF-000-001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"idString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OF-000-001"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My offer"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;I am describing the offer&lt;/p&gt;"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
@@ -587,8 +584,13 @@
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>string</td>
+<td>int</td>
 <td>Unique identifier</td>
+</tr>
+<tr>
+<td>idString</td>
+<td>string</td>
+<td>Unique identifier, in a human readable format</td>
 </tr>
 <tr>
 <td>name</td>
@@ -770,6 +772,7 @@
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferLine"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/offers/1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ean"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567891011"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Shampoo 250ml"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"baseUnitPrice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1055"</span><span class="p">},</span><span class="w">
@@ -780,14 +783,6 @@
     </span><span class="s2">"columnValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EN"</span><span class="p">},</span><span class="w">
     </span><span class="s2">"unitsPerCase"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sectionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"offer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/api/offers/1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offer"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -802,6 +797,11 @@
 <td>id</td>
 <td>int</td>
 <td>Unique identifier</td>
+</tr>
+<tr>
+<td>offer</td>
+<td>string</td>
+<td>IRI of the offer that the line is associated with.</td>
 </tr>
 <tr>
 <td>ean</td>
@@ -854,20 +854,6 @@
 <td>The section that the line belongs to</td>
 </tr>
 </tbody></table>
-<h2 id='offer-line-relationships'>Offer Line Relationships</h2>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>offer</td>
-<td>One to many</td>
-<td>The offer that the line is associated with.</td>
-</tr>
-</tbody></table>
 <h2 id='offer-line-index-parameters'>Offer Line Index Parameters</h2>
 <table><thead>
 <tr>
@@ -880,10 +866,10 @@
 </thead><tbody>
 <tr>
 <td>offer</td>
-<td>string</td>
+<td>int</td>
 <td>exact</td>
 <td>null</td>
-<td>Specify the offer the line must belong to</td>
+<td>Specify the ID of the offer the line must belong to</td>
 </tr>
 <tr>
 <td>order[name]</td>
@@ -915,11 +901,15 @@ contact may only have 1 active basket at any given time.</p>
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basket"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/contact/1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"current"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"offers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"OF-000-001"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"offers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"idString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OF-000-042"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My offer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Example description HTML&lt;/p&gt;"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"conditionsOfSale"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deliveryTerms"</span><span class="p">,</span><span class="w">
@@ -955,21 +945,13 @@ contact may only have 1 active basket at any given time.</p>
           </span><span class="s2">"gross"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£90.00"</span><span class="w"> 
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"grandTotals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"net"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£100.00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£10.00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"gross"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£90.00"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/contact/1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -998,6 +980,12 @@ contact may only have 1 active basket at any given time.</p>
 <td>int</td>
 <td>No</td>
 <td>Unique identifier</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>string</td>
+<td>Yes</td>
+<td>The IRI of the contact that a new basket is to belong to</td>
 </tr>
 <tr>
 <td>currencyCode</td>
@@ -1030,35 +1018,31 @@ contact may only have 1 active basket at any given time.</p>
 <td>Datetime that the basket was created</td>
 </tr>
 <tr>
-<td>contact</td>
-<td>string</td>
-<td>Yes</td>
-<td>The IRI of the contact that a new basket is to belong to</td>
-</tr>
-<tr>
 <td>offerLines</td>
 <td>array</td>
 <td>Yes</td>
 <td>List of offer line IRIs that the basket is to be created with</td>
 </tr>
 </tbody></table>
-<h2 id='basket-relationships'>Basket Relationships</h2>
+<h2 id='basket-subresources'>Basket Subresources</h2>
 <table><thead>
 <tr>
-<th>Name</th>
-<th>Type</th>
+<th>Path</th>
+<th>Methods</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>contact</td>
-<td>One to many</td>
-<td>The contact that the basket is with</td>
+<td>/cancel</td>
+<td>POST</td>
+<td>Cancels a basket. Marks the basket as non-current.</td>
+</tr>
+<tr>
+<td>/accept</td>
+<td>POST</td>
+<td>Confirms a basket, requesting the creation of sales order(s)</td>
 </tr>
 </tbody></table>
-<h2 id='basket-subresources'>Basket Subresources</h2>
-<p><code>/cancel</code>
-<code>/accept</code></p>
 <h1 id='basket-lines'>Basket Lines</h1>
 <blockquote>
 <p>Path</p>
@@ -1082,6 +1066,9 @@ contact may only have 1 active basket at any given time.</p>
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BasketLine"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"basket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/baskets/1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/offers/1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offerLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/offer-lines/1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ean"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567891011"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An example product name 500ml"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"immutable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -1090,27 +1077,9 @@ contact may only have 1 active basket at any given time.</p>
     </span><span class="s2">"unitsPerCase"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
     </span><span class="s2">"baseUnitPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1055"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"appliedUnitPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1043"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"basket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/api/baskets/1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basket"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"offer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/api/offers/1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offer"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"offerLine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/api/offer-lines/1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OfferLine"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1159,6 +1128,24 @@ contact may only have 1 active basket at any given time.</p>
 <td>int</td>
 <td>No</td>
 <td>Unique identifier</td>
+</tr>
+<tr>
+<td>basket</td>
+<td>string</td>
+<td>Yes</td>
+<td>IRI of the basket the line belongs to</td>
+</tr>
+<tr>
+<td>offer</td>
+<td>string&#124;null</td>
+<td>Yes</td>
+<td>IRI of the offer that the product was sourced from.</td>
+</tr>
+<tr>
+<td>offerLine</td>
+<td>string&#124;null</td>
+<td>Yes</td>
+<td>IRI of the offer line that the product was sourced from.</td>
 </tr>
 <tr>
 <td>ean</td>
@@ -1214,29 +1201,17 @@ contact may only have 1 active basket at any given time.</p>
 <td>No</td>
 <td>The total for the row.</td>
 </tr>
-</tbody></table>
-<h2 id='basket-line-relationships'>Basket Line Relationships</h2>
-<table><thead>
 <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>basket</td>
-<td>One to many</td>
-<td>The basket the line belongs to</td>
+<td>created</td>
+<td>string</td>
+<td>No</td>
+<td>The datetime that the entity was created</td>
 </tr>
 <tr>
-<td>offer</td>
-<td>One to many</td>
-<td>The offer that the product was sourced from.</td>
-</tr>
-<tr>
-<td>offerLine</td>
-<td>One to many</td>
-<td>The offer line that the product was sourced from.</td>
+<td>updated</td>
+<td>string</td>
+<td>No</td>
+<td>The datetime that the entity was last updated</td>
 </tr>
 </tbody></table>
 <h2 id='basket-line-index-parameters'>Basket Line Index Parameters</h2>
@@ -1264,7 +1239,21 @@ contact may only have 1 active basket at any given time.</p>
 <td>Order the results by line name</td>
 </tr>
 </tbody></table>
-<h2 id='basket-line-subresources'>Basket Line Subresources</h2><h1 id='unit-price-negotiation'>Unit Price Negotiation</h1>
+<h2 id='basket-line-subresources'>Basket Line Subresources</h2>
+<table><thead>
+<tr>
+<th>Path</th>
+<th>Methods</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>/bulk</td>
+<td>POST</td>
+<td>Bulk create multiple offer lines. See above for example body content.</td>
+</tr>
+</tbody></table>
+<h1 id='unit-price-negotiation'>Unit Price Negotiation</h1>
 <blockquote>
 <p>Path</p>
 </blockquote>
@@ -1281,29 +1270,19 @@ contact may only have 1 active basket at any given time.</p>
 <p>Example Response Body</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/unit-price-negotiations/1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/unit-price-negotiations/2"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UnitPriceNegotiation"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"basketLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/basket-lines/1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/unit-price-negotiations/1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"unitPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1043"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I would like a cheaper price please"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"customerCreated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"basketLine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/api/basket-lines/1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BasketLine"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"/api/unit-price-negotiations/1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UnitPriceNegotiation"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"createdByName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Helen"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1312,6 +1291,7 @@ contact may only have 1 active basket at any given time.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"basketLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/basketLine/1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/basketLine/1"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"unitPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My comment"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"customerCreated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -1322,6 +1302,7 @@ contact may only have 1 active basket at any given time.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Writeable</th>
+<th>Nullable</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1329,62 +1310,64 @@ contact may only have 1 active basket at any given time.</p>
 <td>id</td>
 <td>int</td>
 <td>No</td>
+<td>-</td>
 <td>Unique identifier</td>
+</tr>
+<tr>
+<td>basketLine</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>IRI of the basket line the negotiation belongs to.</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>string</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>IRI of the parent unit price negotiation in the negotiation process</td>
 </tr>
 <tr>
 <td>unitPrice</td>
 <td>string</td>
 <td>Yes</td>
+<td>No</td>
 <td>The unit price that has been requested</td>
 </tr>
 <tr>
 <td>status</td>
 <td>string</td>
 <td>No</td>
+<td>-</td>
 <td>The status of the request</td>
 </tr>
 <tr>
 <td>comment</td>
 <td>string</td>
 <td>Yes</td>
+<td>No</td>
 <td>The comment in support of the requested unit price</td>
 </tr>
 <tr>
 <td>customerCreated</td>
 <td>boolean</td>
 <td>Yes</td>
+<td>No</td>
 <td>Was this created by the customer?</td>
 </tr>
 <tr>
 <td>createdByName</td>
 <td>string&#124;null</td>
-<td>No</td>
-<td>The name of the salesPerson that created the entity. If customerCreated is true, this will be null</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>The name of the salesPerson that created the entity. If customerCreated is true, this should be null</td>
 </tr>
 <tr>
 <td>created</td>
 <td>string</td>
 <td>No</td>
+<td>-</td>
 <td>Datetime that the basket was created</td>
-</tr>
-</tbody></table>
-<h2 id='unit-price-negotiation-relationships'>Unit Price Negotiation Relationships</h2>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>basketLine</td>
-<td>One to many</td>
-<td>The basket line the negotiation belongs to</td>
-</tr>
-<tr>
-<td>parent</td>
-<td>One to many</td>
-<td>The parent unit price negotiation in the negotiation process.</td>
 </tr>
 </tbody></table>
 <h2 id='unit-price-negotiation-index-parameters'>Unit Price Negotiation Index Parameters</h2>
@@ -1456,17 +1439,23 @@ contact may only have 1 active basket at any given time.</p>
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SalesOrder"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SO0000001"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"conditionsOfSale"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"leadTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 weeks"</span><span class="p">},</span><span class="w">
-    </span><span class="s2">"taxRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cancellationReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"paymentTermLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pro Forma"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"deliveryTermLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ex-works"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN-92384972"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"invoiceDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"conditionsOfSale"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"leadTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 weeks"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"sellTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sellTotalBeforeDiscount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sellDiscountPercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sellTax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"preTaxPriceAdjustment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postTaxPriceAdjustment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"adjustedSellTotalWithoutTax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"adjustedSellTotalWithTax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T09:36:35.018Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1483,44 +1472,9 @@ contact may only have 1 active basket at any given time.</p>
 <td>Unique identifier</td>
 </tr>
 <tr>
-<td>created</td>
-<td>string</td>
-<td>Datetime that the sales order was created</td>
-</tr>
-<tr>
-<td>status</td>
-<td>int</td>
-<td>The status of the order</td>
-</tr>
-<tr>
 <td>currencyCode</td>
 <td>string</td>
 <td>The currency of the order</td>
-</tr>
-<tr>
-<td>conditionsOfSale</td>
-<td>object</td>
-<td>The conditions of sale for the order</td>
-</tr>
-<tr>
-<td>taxRate</td>
-<td>int</td>
-<td>The tax rate applied to the order</td>
-</tr>
-<tr>
-<td>cancellationReason</td>
-<td>string/null</td>
-<td>The reason for the cancellation of the order</td>
-</tr>
-<tr>
-<td>paymentTermLabel</td>
-<td>string</td>
-<td>The label of the payment term</td>
-</tr>
-<tr>
-<td>deliveryTermLabel</td>
-<td>string</td>
-<td>The label of the delivery term</td>
 </tr>
 <tr>
 <td>invoiceId</td>
@@ -1533,9 +1487,78 @@ contact may only have 1 active basket at any given time.</p>
 <td>The date of the creation of the invoice</td>
 </tr>
 <tr>
-<td>paymentDate</td>
+<td>reference</td>
 <td>string/null</td>
-<td>The date of the payment of the invoice</td>
+<td>Custom order reference</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>The status of the order</td>
+</tr>
+<tr>
+<td>conditionsOfSale</td>
+<td>object</td>
+<td>The conditions of sale for the order</td>
+</tr>
+<tr>
+<td>totals</td>
+<td>object</td>
+<td>Sales order calculated totals, split into categories (see below)</td>
+</tr>
+<tr>
+<td>created</td>
+<td>string</td>
+<td>Datetime that the sales order was created</td>
+</tr>
+</tbody></table>
+<h2 id='sales-order-total-fields'>Sales Order Total Fields</h2>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sellTotal</td>
+<td>string</td>
+<td>The product total with the discount applied</td>
+</tr>
+<tr>
+<td>sellTotalBeforeDiscount</td>
+<td>string</td>
+<td>The product total without the discount applied</td>
+</tr>
+<tr>
+<td>sellDiscountPercent</td>
+<td>int</td>
+<td>The discount percent applied.</td>
+</tr>
+<tr>
+<td>sellTax</td>
+<td>string</td>
+<td>The tax applied</td>
+</tr>
+<tr>
+<td>preTaxPriceAdjustment</td>
+<td>string</td>
+<td>The value of the price adjustments applied pre-tax</td>
+</tr>
+<tr>
+<td>postTaxPriceAdjustment</td>
+<td>string</td>
+<td>The value of the price adjustments applied post-tax</td>
+</tr>
+<tr>
+<td>adjustedSellTotalWithoutTax</td>
+<td>string</td>
+<td>The net total</td>
+</tr>
+<tr>
+<td>adjustedSellTotalWithTax</td>
+<td>string</td>
+<td>The gross total</td>
 </tr>
 </tbody></table>
 <h2 id='sales-order-index-parameters'>Sales Order Index Parameters</h2>
@@ -1570,9 +1593,6 @@ contact may only have 1 active basket at any given time.</p>
 <td>Order the results by created date</td>
 </tr>
 </tbody></table>
-<h2 id='sales-order-subresources'>Sales Order Subresources</h2>
-<p><code>/product_prices</code>
-<code>/calculated-values</code></p>
 <h2 id='sales-order-statuses'>Sales Order Statuses</h2>
 <table><thead>
 <tr>
@@ -1647,7 +1667,8 @@ contact may only have 1 active basket at any given time.</p>
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SalesOrderLine"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sellUnitPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1055"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unitPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1055"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"105500"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"unitQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ean"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567891011"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An example product name 500ml"</span><span class="w">
@@ -1668,9 +1689,14 @@ contact may only have 1 active basket at any given time.</p>
 <td>Unique identifier</td>
 </tr>
 <tr>
-<td>sellUnitPrice</td>
-<td>object</td>
-<td>The amount that each unit is being sold for</td>
+<td>unitPrice</td>
+<td>string</td>
+<td>The amount that each unit is being sold for, in pence/cents</td>
+</tr>
+<tr>
+<td>total</td>
+<td>string</td>
+<td>The total value of the line, in pence/cents</td>
 </tr>
 <tr>
 <td>unitQuantity</td>
@@ -1688,20 +1714,6 @@ contact may only have 1 active basket at any given time.</p>
 <td>The name of the line</td>
 </tr>
 </tbody></table>
-<h2 id='sales-order-line-relationships'>Sales Order Line Relationships</h2>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>salesOrder</td>
-<td>One to many</td>
-<td>The sales order that the line is associated with.</td>
-</tr>
-</tbody></table>
 <h2 id='sales-order-line-index-parameters'>Sales Order Line Index Parameters</h2>
 <table><thead>
 <tr>
@@ -1717,7 +1729,66 @@ contact may only have 1 active basket at any given time.</p>
 <td>string</td>
 <td>exact</td>
 <td>null</td>
-<td>The sales order the lines must belong to.</td>
+<td>The ID of the sales order the lines must belong to.</td>
+</tr>
+<tr>
+<td>order[name]</td>
+<td>string</td>
+<td>sort</td>
+<td>asc</td>
+<td>Sorts the lines by name.</td>
+</tr>
+</tbody></table>
+<h1 id='usage-data'>Usage Data</h1>
+<blockquote>
+<p>Path</p>
+</blockquote>
+<pre class="highlight plaintext"><code>/usage-data(/{id})
+</code></pre>
+<p>Usage data records.</p>
+<h2 id='usage-data-available-verbs'>Usage Data Available Verbs</h2>
+<ul>
+<li>POST</li>
+</ul>
+<h2 id='usage-data-fields'>Usage Data Fields</h2>
+<blockquote>
+<p>Example POST Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/contacts/1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"view"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Writeable</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contact</td>
+<td>string</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>The IRI of the contact that has performed the action</td>
+</tr>
+<tr>
+<td>action</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>Token representing the action performed</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object/array</td>
+<td>Yes</td>
+<td>No</td>
+<td>Payload of data in support of the action being performed</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
