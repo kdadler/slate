@@ -24,17 +24,23 @@ Orders that are currently being processed, or have been completed.
   "type": "SalesOrder",
   "attributes": {
     "id": "SO0000001",
-    "created": "2020-04-06T09:36:35.018Z",
-    "status": 60,
     "currencyCode": "GBP",
-    "conditionsOfSale": {"leadTime": "2 weeks"},
-    "taxRate": 20,
-    "cancellationReason": null,
-    "paymentTermLabel": "Pro Forma",
-    "deliveryTermLabel": "Ex-works",
     "invoiceId": "IN-92384972",
     "invoiceDate": "2020-04-06T09:36:35.018Z",
-    "paymentDate": null
+    "reference": "ref001",
+    "status": 60,
+    "conditionsOfSale": {"leadTime": "2 weeks"},
+    "totals": {
+      "sellTotal": "10000",
+      "sellTotalBeforeDiscount": "12000",
+      "sellDiscountPercent": 4,
+      "sellTax": "100",
+      "preTaxPriceAdjustment": "200",
+      "postTaxPriceAdjustment": "400",
+      "adjustedSellTotalWithoutTax": "10000",
+      "adjustedSellTotalWithTax": "10000"
+    },
+    "created": "2020-04-06T09:36:35.018Z"
   }
 }
 ```
@@ -42,17 +48,27 @@ Orders that are currently being processed, or have been completed.
 Field | Type | Description
 ----- | ---  | -----------
 id | string | Unique identifier
-created | string | Datetime that the sales order was created
-status | int | The status of the order
 currencyCode | string | The currency of the order
-conditionsOfSale | object | The conditions of sale for the order
-taxRate | int | The tax rate applied to the order
-cancellationReason | string/null | The reason for the cancellation of the order
-paymentTermLabel | string | The label of the payment term
-deliveryTermLabel | string | The label of the delivery term
 invoiceId | string/null | The ID of the order's invoice
 invoiceDate | string/null | The date of the creation of the invoice
-paymentDate | string/null | The date of the payment of the invoice
+reference | string/null | Custom order reference
+status | int | The status of the order
+conditionsOfSale | object | The conditions of sale for the order
+totals | object | Sales order calculated totals, split into categories (see below)
+created | string | Datetime that the sales order was created
+
+## Sales Order Total Fields
+
+Field | Type | Description
+----- | ---- | -----------
+sellTotal | string | The product total with the discount applied
+sellTotalBeforeDiscount | string | The product total without the discount applied 
+sellDiscountPercent | int | The discount percent applied.
+sellTax | string | The tax applied
+preTaxPriceAdjustment | string | The value of the price adjustments applied pre-tax
+postTaxPriceAdjustment | string | The value of the price adjustments applied post-tax
+adjustedSellTotalWithoutTax | string | The net total
+adjustedSellTotalWithTax | string | The gross total
 
 ## Sales Order Index Parameters
 
@@ -61,11 +77,6 @@ Name | Type | Match | Default | Description
 contact | string | exact | null | The contact that the sales order must be associated with
 status | string | exact | null | Specify the status of the sales orders to be returned
 order\[created] | string | exact | asc | Order the results by created date
-
-## Sales Order Subresources
-
-`/product_prices`
-`/calculated-values`
 
 ## Sales Order Statuses
 

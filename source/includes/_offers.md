@@ -21,7 +21,8 @@ Offers are product availability lists that are sent out to current or prospectiv
   "id": "/api/offers/OF-000-001",
   "type": "Offer",
   "attributes": {
-    "id": "OF-000-001",
+    "id": 1,
+    "idString": "OF-000-001",
     "name": "My offer",
     "description": "<p>I am describing the offer</p>",
     "status": "active",
@@ -78,7 +79,8 @@ Offers are product availability lists that are sent out to current or prospectiv
 
 Field | Type | Description
 ----- | ---  | -----------
-id | string | Unique identifier
+id | int | Unique identifier
+idString | string | Unique identifier, in a human readable format
 name | string | The offer's name 
 description | string | HTML description 
 status | string | The status token for the offer.

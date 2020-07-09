@@ -16,6 +16,7 @@ includes:
   - unitPriceNegotiations
   - salesOrders
   - salesOrderLines 
+  - usageData
   - errors
   - ztodo
 

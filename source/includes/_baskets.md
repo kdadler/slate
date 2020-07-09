@@ -24,11 +24,15 @@ contact may only have 1 active basket at any given time.
   "type": "Basket",
   "attributes": {
     "id": 1,
+    "contact": "/api/contact/1",
     "currencyCode": "GBP",
     "current": true,
-    "offers": {
-      "OF-000-001": {
+    "offers": [
+      {
+        "id": "42",
+        "idString": "OF-000-042",
         "name": "My offer",
+        "description": "<p>Example description HTML</p>",
         "conditionsOfSale": [
           {
             "type": "deliveryTerms",
@@ -64,21 +68,13 @@ contact may only have 1 active basket at any given time.
           "gross": "£90.00" 
         }
       }
-    },
-    "totals": {
+    ],
+    "grandTotals": {
       "net": "£100.00",
       "discount": "£10.00",
       "gross": "£90.00"
     },
     "created": "2020-04-06T09:36:35.018Z"
-  },
-  "relationships": {
-    "contact": {
-      "data": {
-        "id":  "/contact/1",
-        "type": "Contact"
-      }
-    }
   }
 }
 ```
@@ -99,21 +95,17 @@ contact may only have 1 active basket at any given time.
 Field | Type | Writeable | Description
 ----- | ---  | --------- | -----------
 id | int | No | Unique identifier
+contact | string | Yes | The IRI of the contact that a new basket is to belong to
 currencyCode | string | No | The currency of the basket
 current | boolean | No | Is the basket current for the user?
 offers | object | No | A set of offer data for the basket. This includes the name, ID, conditions of sale and totals.
 totals | object | No | The totals for the basket.
 created | string | No | Datetime that the basket was created
-contact | string | Yes | The IRI of the contact that a new basket is to belong to
 offerLines | array | Yes | List of offer line IRIs that the basket is to be created with
-
-## Basket Relationships
-
-Name | Type | Description
----- | ---- | -----------
-contact | One to many | The contact that the basket is with
 
 ## Basket Subresources
 
-`/cancel`
-`/accept`
+Path | Methods | Description
+---- | ------- | -----------
+/cancel | POST | Cancels a basket. Marks the basket as non-current.
+/accept | POST | Confirms a basket, requesting the creation of sales order(s)

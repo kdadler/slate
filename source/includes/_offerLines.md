@@ -22,6 +22,7 @@ The lines associated with an offer.
   "type": "OfferLine",
   "attributes": {
     "id": 1,
+    "offer": "/api/offers/1",
     "ean": "1234567891011",
     "name": "Example Shampoo 250ml",
     "baseUnitPrice": {"value": "1055"},
@@ -32,14 +33,6 @@ The lines associated with an offer.
     "columnValues": {"1": "EN"},
     "unitsPerCase": 15,
     "sectionId": 1
-  },
-  "relationships": {
-    "offer": {
-      "data": {
-        "id":  "/api/offers/1",
-        "type": "Offer"
-      }
-    }
   }
 }
 ```
@@ -47,6 +40,7 @@ The lines associated with an offer.
 Field | Type | Description
 ----- | ---  | -----------
 id | int | Unique identifier
+offer | string | IRI of the offer that the line is associated with.
 ean | string | The EAN for the line
 name | string | The line's name
 baseUnitPrice | object | The base unit price value of the line
@@ -58,15 +52,9 @@ columnValues | object | The values for each column, keyed by column ID (see the 
 unitsPerCase | int | The number of units per case for the line
 sectionId | integer/null | The section that the line belongs to
 
-## Offer Line Relationships
-
-Name | Type | Description
----- | ---- | -----------
-offer | One to many | The offer that the line is associated with.
-
 ## Offer Line Index Parameters
 
 Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
-offer | string | exact | null | Specify the offer the line must belong to
+offer | int | exact | null | Specify the ID of the offer the line must belong to
 order\[name] | string | exact | asc | Order the results by line name

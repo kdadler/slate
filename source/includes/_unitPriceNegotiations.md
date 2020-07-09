@@ -19,29 +19,19 @@ Per line unit price negotiations for baskets.
 
 ```json
 {
-  "id": "/api/unit-price-negotiations/1",
+  "id": "/api/unit-price-negotiations/2",
   "type": "UnitPriceNegotiation",
   "attributes": {
-    "id": 1,
+    "id": 2,
+    "basketLine": "/api/basket-lines/1",
+    "parent": "/api/unit-price-negotiations/1",
     "unitPrice": "1043",
     "status": "pending",
     "comment": "I would like a cheaper price please",
     "customerCreated": false,
-    "created": "2020-04-06T09:36:35.018Z"
-  },
-  "relationships": {
-    "basketLine": {
-      "data": {
-        "id":  "/api/basket-lines/1",
-        "type": "BasketLine"
-      }
-    },
-    "parent": {
-      "data": {
-        "id":  "/api/unit-price-negotiations/1",
-        "type": "UnitPriceNegotiation"
-      }
-    }
+    "createdByName": "Helen",
+    "created": "2020-04-06T09:36:35.018Z",
+    "updated": "2020-04-06T09:36:35.018Z"
   }
 }
 ```
@@ -51,28 +41,24 @@ Per line unit price negotiations for baskets.
 ```json
 {
   "basketLine": "/api/basketLine/1",
+  "parent": "/api/basketLine/1",
   "unitPrice": "400",
   "comment": "My comment",
   "customerCreated": true
 }
 ```
 
-Field | Type | Writeable | Description
------ | ---- | --------- | -----------
-id | int | No | Unique identifier
-unitPrice | string | Yes | The unit price that has been requested
-status | string | No | The status of the request
-comment | string | Yes | The comment in support of the requested unit price
-customerCreated | boolean | Yes | Was this created by the customer?
-createdByName | string&#124;null | No | The name of the salesPerson that created the entity. If customerCreated is true, this will be null 
-created | string | No | Datetime that the basket was created 
-
-## Unit Price Negotiation Relationships
-
-Name | Type | Description
----- | ---- | -----------
-basketLine | One to many | The basket line the negotiation belongs to
-parent | One to many | The parent unit price negotiation in the negotiation process.
+Field | Type | Writeable | Nullable | Description
+----- | ---- | --------- | -------- | -----------
+id | int | No | - | Unique identifier
+basketLine | string | Yes | No | IRI of the basket line the negotiation belongs to.
+parent | string | Yes | Yes | IRI of the parent unit price negotiation in the negotiation process
+unitPrice | string | Yes | No | The unit price that has been requested
+status | string | No | - | The status of the request
+comment | string | Yes | No | The comment in support of the requested unit price
+customerCreated | boolean | Yes | No | Was this created by the customer?
+createdByName | string&#124;null | Yes | Yes | The name of the salesPerson that created the entity. If customerCreated is true, this should be null 
+created | string | No | - | Datetime that the basket was created 
 
 ## Unit Price Negotiation Index Parameters
 
