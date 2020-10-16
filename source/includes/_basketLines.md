@@ -30,6 +30,9 @@ Lines for a basket.
     "offerLine": "/api/offer-lines/1",
     "ean": "1234567891011",
     "name": "An example product name 500ml",
+    "brand": "Elemis",
+    "language": "EN",
+    "cartonQuantity": 12,
     "immutable": false,
     "unitQuantity": 120,
     "availableUnitQuantity": 250,
@@ -86,6 +89,9 @@ offer | string&#124;null | Yes | IRI of the offer that the product was sourced f
 offerLine | string&#124;null | Yes | IRI of the offer line that the product was sourced from.
 ean | string | No | The EAN for the line
 name | string | No | The name of the line
+brand | string&#124;null | No | The name of the line's brand
+language | string&#124;null | The line's language
+cartonQuantity | string&#124;null | The quantity of units in a carton for the line
 immutable | boolean | No | Can the customer edit this line? If yes, updates/removal will not be permitted.
 unitQuantity | int | Yes | The number of units being purchased
 availableUnitQuantity | int | No | The available units number
