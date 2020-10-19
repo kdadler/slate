@@ -75,6 +75,7 @@ Offers are product availability lists that are sent out to current or prospectiv
       {"id": 1, "label": "Fragrance", "weight": 10}
     ],
     "created": "2020-04-06T09:36:35.018Z",
+    "shared": true,
     "sharedWithContacts": false,
     "sharedWithPublic": true,
     "shareKey": "s09dujsovd90sdvv",
@@ -113,21 +114,13 @@ pricingTiers | array | The pricing tiers in the offer
 columns | array | The columns that are to be displayed on the offer's product table. Please see the columns section below for more information 
 sections | array | The sections that products can be displayed in
 created | string | Datetime that the offer was created
+shared | bool | The master shared flag. This should be considered as an override to the below shared flags, they can be considered true only if this flag is also true.
 sharedWithContacts | bool | Is this offer shared with contacts (existing customers)? If true, the recipient must login to view the offer.
 sharedWithPublic | bool | Is this offer shared publicly. If true, the recipient may view the offer without a login
 shareKey | string&#124;null | The unique key for the offer out. This is the key that is sent to prospective customers
 shareLink | string&#124;null | The full link sent to prospective customers.
 recipientEmails | array | A list of the email addresses that the offer has been shared with.
 recipientContacts | array | A list of the customers (contacts) that the offer has been shared with.
-
-## Fetching an offer
-
-An offer may be fetched using either its ID (formatted or plain), or its share key value. Using the above data as an example,
-any of the following are valid calls, and should return the same data:
-
-* `\api\offers\1`
-* `\api\offers\OF-000-001`
-* `\api\offers\s09dujsovd90sdvv`
 
 ## Offer columns
 
@@ -168,23 +161,46 @@ contactName | string | The full name of the contact
 companyId | int | The unique ID of the company that the contact belongs to
 companyName | string | The company's name 
 
+## Offer Statuses
+
+Token | Label | Description | Visible to customers
+----- | ----- | ----------- | --------------------
+draft | Draft | The offer has been created but not yet available to order from | No
+active | Active | The offer is currently active and available to be ordered from | Yes
+expired | Expired | The offer has passed its expiry date | No
+cancelled | Cancelled | The offer has been cancelled by the sales person | No
+
 ## Offer Index Parameters
 
 Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
 name | string | partial | null | Search against the offer name
 status | string | exact | null | Specify the status of the offers to be returned
-public | boolean | exact | null | Filter results by publicly accessible offers
-restricted | boolean | exact | null | Filter results by restricted flag
-contactId | int | exact | null | Exclude offers that are restricted but not to the specified contact.
+contactId | int | exact | null | Filter offers out that are not shared with the specified contact ID
+shared | int | exact | null | Filter offers based on the shared flag
+sharedWithCustomers | int | exact | null | Filter offers based on the sharedWithCustomers flag
+sharedWithPublic | int | exact | null | Filter offers based on the sharedWithPublic flag
 order\[created] | string | exact | asc | Order the results by created date
 order\[name] | string | exact | asc | Order the results by name
 
-## Offer Statuses
+## Fetching an offer
 
-Token | Label | Description
------ | ----- | -----------
-draft | Draft | The offer has been created but not yet available to order from
-active | Active | The offer is currently active and available to be ordered from
-expired | Expired | The offer has passed its expiry date
-cancelled | Cancelled | The offer has been cancelled by the sales person
+An offer may be fetched using either its ID (formatted or plain), or its share key value. Using the above data as an example,
+any of the following are valid calls, and should return the same data:
+
+* `/api/offers/1`
+* `/api/offers/OF-000-001`
+* `/api/offers/s09dujsovd90sdvv`
+
+## Indexing offers
+
+For a customer to be permitted to view an offer, the following must be true:
+
+* It must be shared
+* It must be shared with customers
+* It must have the status active
+* It must be explicitly shared with the customer.
+
+Below is an example request for this:
+
+`/api/offers?shared=1&sharedWithCustomers=1&status=active&contactId=12345`
