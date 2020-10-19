@@ -122,11 +122,11 @@ shareLink | string&#124;null | The full link sent to prospective customers.
 recipientEmails | array | A list of the email addresses that the offer has been shared with.
 recipientContacts | array | A list of the customers (contacts) that the offer has been shared with.
 
-## Offer columns
+## Offer Columns
 
 The `columns` key should contain an array of field definitions and their relative weights.
 
-### Column fields
+### Column Fields
 
 Name | Type | Description
 ---- | ---- | -----------
@@ -136,7 +136,7 @@ label | string | The human-readable label for the field
 weight | int | The relative weight of the field. Fields should be displayed to a user in ascending weight order
 enabled | bool | Is this field enabled? If false, the field should not be displayed to the end user. If this is not set, assume it to be true. 
   
-### Column types
+### Column Types
 
 Name | Description | Value source
 ---- | ----------- | ------------
@@ -148,11 +148,11 @@ cartonQuantity | The carton quantity of the line | A line's `cartonQuantity` fie
 customValue | A custom value defined by the salesperson | Found in a line's `columnValues` field, find a match using the columns' `id` and line column values' `productColumnsId` values 
 stockCount | The units of stock available for the line | Found in a line's `columnValues` field, look for the value with the type `stockCount`
 
-## Offer recipient contacts
+## Offer Recipient Contacts
 
 The `recipientContacts` key should contain an array of contacts that the offer has been shared with. Each should be formatted identically.
 
-### Recipient contact fields
+### Recipient Contact Fields
 
 Name | Type | Description
 ---- | ---- | -----------
@@ -176,14 +176,14 @@ Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
 name | string | partial | null | Search against the offer name
 status | string | exact | null | Specify the status of the offers to be returned
-contactId | int | exact | null | Filter offers out that are not shared with the specified contact ID
-shared | int | exact | null | Filter offers based on the shared flag
-sharedWithCustomers | int | exact | null | Filter offers based on the sharedWithCustomers flag
+contactId | boolean | exact | null | Filter offers out that are not shared with the specified contact ID
+shared | boolean | exact | null | Filter offers based on the shared flag
+sharedWithCustomers | boolean | exact | null | Filter offers based on the sharedWithCustomers flag
 sharedWithPublic | int | exact | null | Filter offers based on the sharedWithPublic flag
 order\[created] | string | exact | asc | Order the results by created date
 order\[name] | string | exact | asc | Order the results by name
 
-## Fetching an offer
+## Fetching an Offer
 
 An offer may be fetched using either its ID (formatted or plain), or its share key value. Using the above data as an example,
 any of the following are valid calls, and should return the same data:
@@ -192,7 +192,7 @@ any of the following are valid calls, and should return the same data:
 * `/api/offers/OF-000-001`
 * `/api/offers/s09dujsovd90sdvv`
 
-## Indexing offers
+## Indexing Offers
 
 For a customer to be permitted to view an offer, the following must be true:
 
@@ -203,4 +203,4 @@ For a customer to be permitted to view an offer, the following must be true:
 
 Below is an example request for this:
 
-`/api/offers?shared=1&sharedWithCustomers=1&status=active&contactId=12345`
+`/api/offers?shared=true&sharedWithCustomers=true&status=active&contactId=12345`
