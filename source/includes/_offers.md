@@ -74,10 +74,26 @@ Offers are product availability lists that are sent out to current or prospectiv
     "sections": [
       {"id": 1, "label": "Fragrance", "weight": 10}
     ],
-    "public": false,
-    "restricted": false,
-    "contactIds": [10, 20, 60],
-    "created": "2020-04-06T09:36:35.018Z"
+    "created": "2020-04-06T09:36:35.018Z",
+    "sharedWithContacts": false,
+    "sharedWithPublic": true,
+    "shareKey": "s09dujsovd90sdvv",
+    "shareLink": "www.client-portal.com/offer/s09dujsovd90sdvv",
+    "recipientEmails": ["customer1@email.com", "customer2@email.com"],
+    "recipientContacts": [
+      {
+        "contactId": 10,
+        "contactName": "Sales Person",
+        "companyId": 40,
+        "companyName": "Customer Inc"
+      },
+      {
+        "contactId": 15,
+        "contactName": "Jon Bon Jovi",
+        "companyId": 70,
+        "companyName": "Vancouver Fragrances"
+      }
+    ]
   }
 }
 ```
@@ -96,16 +112,28 @@ productCount | int | A count of the number of products in the offer.
 pricingTiers | array | The pricing tiers in the offer
 columns | array | The columns that are to be displayed on the offer's product table. Please see the columns section below for more information 
 sections | array | The sections that products can be displayed in
-public | boolean | Is this offer viewable by customers without the need to log in?
-restricted | boolean | Is this offer only available to customers listed in the contactIds?
-contactIds | array | A list of the contact IDs that are permitted to access the offer.
 created | string | Datetime that the offer was created
+sharedWithContacts | bool | Is this offer shared with contacts (existing customers)? If true, the recipient must login to view the offer.
+sharedWithPublic | bool | Is this offer shared publicly. If true, the recipient may view the offer without a login
+shareKey | string&#124;null | The unique key for the offer out. This is the key that is sent to prospective customers
+shareLink | string&#124;null | The full link sent to prospective customers.
+recipientEmails | array | A list of the email addresses that the offer has been shared with.
+recipientContacts | array | A list of the customers (contacts) that the offer has been shared with.
+
+## Fetching an offer
+
+An offer may be fetched using either its ID (formatted or plain), or its share key value. Using the above data as an example,
+any of the following are valid calls, and should return the same data:
+
+* `\api\offers\1`
+* `\api\offers\OF-000-001`
+* `\api\offers\s09dujsovd90sdvv`
 
 ## Offer columns
 
-The columns key should contain an array of field definitions and their relative weights.
+The `columns` key should contain an array of field definitions and their relative weights.
 
-### Column definition values
+### Column fields
 
 Name | Type | Description
 ---- | ---- | -----------
@@ -126,6 +154,19 @@ language | The language of the line | A line's `language` field
 cartonQuantity | The carton quantity of the line | A line's `cartonQuantity` field
 customValue | A custom value defined by the salesperson | Found in a line's `columnValues` field, find a match using the columns' `id` and line column values' `productColumnsId` values 
 stockCount | The units of stock available for the line | Found in a line's `columnValues` field, look for the value with the type `stockCount`
+
+## Offer recipient contacts
+
+The `recipientContacts` key should contain an array of contacts that the offer has been shared with. Each should be formatted identically.
+
+### Recipient contact fields
+
+Name | Type | Description
+---- | ---- | -----------
+contactId | int | The unique ID of the contact that the offer has been shared with
+contactName | string | The full name of the contact
+companyId | int | The unique ID of the company that the contact belongs to
+companyName | string | The company's name 
 
 ## Offer Index Parameters
 
