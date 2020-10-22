@@ -59,3 +59,11 @@ companyNumber | string | The company number for the company the contact belongs 
 vatNumber | string | The VAT number for the company the contact belongs to
 invoiceAddress | object | The invoice address for the contact's company
 deliveryAddress | object | The delivery address for the contact's company
+
+## Contact Subresources
+
+The contact resource has the following subresources:
+
+Name | Path | Response | Description
+---- | ---- | -------- | -----------
+Current basket | /api/contacts/{id}/current-basket | Basket data (see basket section), or 404 if not found | Fetches the current basket for a given contact.

@@ -46,4 +46,6 @@ name | string | The name of the line
 Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
 salesOrder | string | exact | null | The ID of the sales order the lines must belong to.
-order\[name] | string | sort | asc | Sorts the lines by name. 
+order\[name] | string | sort | asc | Sorts the lines by name.
+itemsPerPage | int | exact | 25 | The number of items to return per page
+page | int | exact | 1 | The page of results to return 

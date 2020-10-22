@@ -182,6 +182,8 @@ sharedWithCustomers | boolean | exact | null | Filter offers based on the shared
 sharedWithPublic | int | exact | null | Filter offers based on the sharedWithPublic flag
 order\[created] | string | exact | asc | Order the results by created date
 order\[name] | string | exact | asc | Order the results by name
+itemsPerPage | int | exact | 25 | The number of items to return per page
+page | int | exact | 1 | The page of results to return
 
 ## Fetching an Offer
 

@@ -77,6 +77,8 @@ Name | Type | Match | Default | Description
 contact | string | exact | null | The contact that the sales order must be associated with
 status | string | exact | null | Specify the status of the sales orders to be returned
 order\[created] | string | exact | asc | Order the results by created date
+itemsPerPage | int | exact | 25 | The number of items to return per page
+page | int | exact | 1 | The page of results to return
 
 ## Sales Order Statuses
 

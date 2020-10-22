@@ -108,6 +108,8 @@ Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
 basket | int | exact | null | Specify the basket the line must belong to
 order\[name] | string | exact | asc | Order the results by line name
+itemsPerPage | int | exact | 25 | The number of items to return per page
+page | int | exact | 1 | The page of results to return
 
 ## Basket Line Subresources
 
