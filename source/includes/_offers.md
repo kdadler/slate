@@ -214,4 +214,3 @@ The offers resource has the following subresources:
 Name | Path | Method | Response | Description
 ---- | ---- | ------ | -------- | -----------
 export-data | /api/offers/{id}/export-data | GET | XSLX file contents | Fetches the export file data for exporting an offer to an XLSX file.
-submit | /api/offers/{id}/submit | PUT | Offer API data | Submits a basket to the salesperson

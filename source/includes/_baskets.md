@@ -104,5 +104,5 @@ created | string | No | Datetime that the basket was created
 
 Path | Methods | Description
 ---- | ------- | -----------
-/cancel | POST | Cancels a basket. Marks the basket as non-current.
-/accept | POST | Confirms a basket, requesting the creation of sales order(s)
+cancel | PUT | Cancels a basket. Marks the basket as non-current.
+submit | PUT | Submits a basket to the salesperson
