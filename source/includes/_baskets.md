@@ -27,6 +27,7 @@ contact may only have 1 active basket at any given time.
     "contact": "/api/contact/1",
     "currencyCode": "GBP",
     "current": true,
+    "locked": false,
     "offers": [
       {
         "id": "42",
@@ -94,6 +95,7 @@ id | int | No | Unique identifier
 contact | string | Yes | The IRI of the contact that a new basket is to belong to
 currencyCode | string | Yes | The currency of the basket
 current | boolean | No | Is the basket current for the user?
+locked | boolean | No | Is the basket locked?
 offers | object | No | A set of offer data for the basket. This includes the name, ID, conditions of sale and totals.
 totals | object | No | The totals for the basket.
 created | string | No | Datetime that the basket was created
