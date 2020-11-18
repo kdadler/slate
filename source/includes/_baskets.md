@@ -62,18 +62,24 @@ contact may only have 1 active basket at any given time.
             "weight": 4,
             "label": null
           }
-        ],
-        "totals": {
-          "net": "£100.00",
-          "discount": "£10.00",
-          "gross": "£90.00" 
-        }
+        ]
       }
     ],
-    "grandTotals": {
-      "net": "£100.00",
-      "discount": "£10.00",
-      "gross": "£90.00"
+    "totals": {
+      "currency": "EUR",
+      "lineTotal": "10000",
+      "discountedLineTotal": "8000",
+      "grossTotal": "8000",
+      "offerTotals": [
+        {
+          "offerId": 42,
+          "currency": "EUR",
+          "lineTotal": "10000",
+          "discountedLineTotal": "8000",
+          "discountPercentage": 20,
+          "grossTotal": "8000"
+        }
+      ]
     },
     "created": "2020-04-06T09:36:35.018Z"
   }
