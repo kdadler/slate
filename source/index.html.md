@@ -9,14 +9,15 @@ toc_footers:
 
 includes:
   - accountRequest
+  - baskets
+  - basketLines
   - contacts
   - offers
   - offerLines
-  - baskets
-  - basketLines
-  - unitPriceNegotiations
+  - messages
   - salesOrders
   - salesOrderLines 
+  - unitPriceNegotiations
   - usageData
   - errors
   - ztodo
