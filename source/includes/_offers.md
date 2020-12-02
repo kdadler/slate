@@ -209,8 +209,20 @@ Below is an example request for this:
 
 ## Offers Subresources
 
+> Example share request body
+
+```json
+{
+  "emails": [
+    "kieran@beautyneteurope.com",
+    "theo@beautyneteurope.com"
+  ]
+}
+```
+
 The offers resource has the following subresources:
 
 Name | Path | Method | Response | Description
 ---- | ---- | ------ | -------- | -----------
 export-data | /api/offers/{id}/export-data | GET | XSLX file contents | Fetches the export file data for exporting an offer to an XLSX file.
+share | /api/offers/{id}/share | PUT | Offer data | Shares the offer with another email. Requires the request body to include a non-empty emails value.
