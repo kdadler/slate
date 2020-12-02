@@ -93,3 +93,13 @@ Token | Label | Description
 60 | Invoice | The order has been invoiced
 70 | Complete | The order is complete
 80 | Closed Lost | The order has been cancelled
+
+## Sales Order Subresources
+
+The sales order resource has the following subresources:
+
+Name | Path | Method | Response | Description
+---- | ---- | ------ | -------- | -----------
+pdf | /api/sales-orders/{id}/pdf | GET | PDF file contents | Fetches the sales order confirmation PDF file 
+invoice pdf | /api/sales-orders/{id}/invoice-pdf | GET | PDF file contents | Fetches the sales order's invoice PDF file 
+packing list pdf | /api/sales-orders/{id}/packing-list-pdf | GET | PDF file contents | Fetches the sales order packing list PDF file 
