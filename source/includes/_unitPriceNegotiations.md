@@ -64,7 +64,7 @@ created | string | No | - | Datetime that the basket was created
 
 Name | Type | Match | Default | Description
 ---- | ---- | ----- | ------- | -----------
-basket | int | exact | null | Specify the basket the unit price negotiation must belong to
+basketLine.basket | int | exact | null | Specify the ID of the basket the unit price negotiation must belong to
 order\[created] | string | exact | asc | Order the results by creation date
 itemsPerPage | int | exact | 25 | The number of items to return per page
 page | int | exact | 1 | The page of results to return

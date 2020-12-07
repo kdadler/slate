@@ -12,9 +12,9 @@ includes:
   - baskets
   - basketLines
   - contacts
+  - messages
   - offers
   - offerLines
-  - messages
   - salesOrders
   - salesOrderLines 
   - unitPriceNegotiations
