@@ -29,24 +29,28 @@ Offers are product availability lists that are sent out to current or prospectiv
     "conditionsOfSale": [
       {
         "type": "deliveryTerms",
+        "typeLabel": "Delivery Terms",
         "value": "Ex works",
         "weight": 1,
         "label": null
       },
       {
         "type": "leadTime",
+        "typeLabel": "Lead Time",
         "value": "5 weeks",
         "weight": 2,
         "label": null
       },
       {
         "type": "extraConditionsOfSale",
+        "typeLabel": "Extra Condition",
         "value": "Yes",
         "weight": 3,
         "label": "Take all"
       },
       {
         "type": "volumeDiscount",
+        "typeLabel": "Volume Discount",
         "value": {
           "threshold": 10000,
           "discountPercentage": 5
