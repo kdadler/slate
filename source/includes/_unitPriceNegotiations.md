@@ -69,11 +69,20 @@ order\[created] | string | exact | asc | Order the results by creation date
 itemsPerPage | int | exact | 25 | The number of items to return per page
 page | int | exact | 1 | The page of results to return
 
-## Statuses
+## Unit Price Negotiation Statuses
 
 Token | Description
 ----- | -----------
 pending | The negotiation has been created and is pending a response
-approved | The negotiation is approved by the salesperson
+applied | The negotiation is approved by the salesperson
 declined | The negotiation has been declined without a counter offer
 countered | The negotiation has been superseded by another unit price negotiation
+replaced | The negotiation has been replaced by a newer negotiation.
+cancelled | The negotiation has been cancelled by the customer.
+
+## Unit Price Negotiation Subresources
+
+Name | Path | Method | Response | Description
+---- | ---- | ------ | -------- | -----------
+Replace | /api/unit-price-negotiations/{id}/replace | PUT | Unit price negotiation data | Marks a unit price negotiation as replaced.
+Cancel | /api/unit-price-negotiations/{id}/cancel | PUT | Unit price negotiation data | Cancels the unit price negotiation. Only a pending negotiation may be cancelled.
