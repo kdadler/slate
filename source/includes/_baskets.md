@@ -110,4 +110,4 @@ Name | Path | Method | Response | Description
 ---- | ---- | ------ | -------- | -----------
 Cancel | /api/basket/{id}/cancel | PUT | Basket data | Cancels a basket. Marks the basket as non-current.
 Submit | /api/basket/{id}/submit | PUT | Basket data | Submits a basket to the salesperson.
-Export | /api/basket/{id}/export | GET | XSLX file contents | Exports a basket to an Excel file. NOTE: This is currently a stub and returns and empty file.
+Export | /api/basket/{id}/export-data | GET | XSLX file contents | Exports a basket to an Excel file. NOTE: This is currently a stub and returns and empty file.
