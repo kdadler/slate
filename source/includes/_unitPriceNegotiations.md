@@ -27,6 +27,7 @@ Per line unit price negotiations for baskets.
     "parent": "/api/unit-price-negotiations/1",
     "unitPrice": "1043",
     "status": "pending",
+    "statusLabel": "Pending",
     "comment": "I would like a cheaper price please",
     "customerCreated": false,
     "createdByName": "Helen",
@@ -56,6 +57,7 @@ basketLine | string | Yes | No | IRI of the basket line the negotiation belongs 
 parent | string | Yes | Yes | IRI of the parent unit price negotiation in the negotiation process
 unitPrice | string | Yes | No | The unit price that has been requested
 status | string | No | - | The status of the request
+statusLabel | string | No | - | The human-readable label of the request's status. 
 comment | string | Yes | No | The comment in support of the requested unit price
 customerCreated | boolean | Yes | No | Was this created by the customer?
 currencyCode | string | No | - | Currency of the unit price value 
