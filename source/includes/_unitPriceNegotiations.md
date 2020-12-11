@@ -30,6 +30,7 @@ Per line unit price negotiations for baskets.
     "comment": "I would like a cheaper price please",
     "customerCreated": false,
     "createdByName": "Helen",
+    "currencyCode": "EUR",
     "created": "2020-04-06T09:36:35.018Z",
     "updated": "2020-04-06T09:36:35.018Z"
   }
@@ -57,6 +58,7 @@ unitPrice | string | Yes | No | The unit price that has been requested
 status | string | No | - | The status of the request
 comment | string | Yes | No | The comment in support of the requested unit price
 customerCreated | boolean | Yes | No | Was this created by the customer?
+currencyCode | string | No | - | Currency of the unit price value 
 createdByName | string&#124;null | Yes | Yes | The name of the salesPerson that created the entity. If customerCreated is true, this should be null 
 created | string | No | - | Datetime that the basket was created 
 
