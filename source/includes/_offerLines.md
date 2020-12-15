@@ -50,7 +50,21 @@ The lines associated with an offer.
       }
     ],
     "unitsPerCase": 15,
-    "sectionId": 1
+    "sectionId": 1,
+    "images": [
+      {
+        "id": 10,
+        "fileName": "img_000001.png",
+        "path": "images/products",
+        "weight": 0
+      },
+      {
+        "id": 16,
+        "fileName": "img_000004.png",
+        "path": "images/products",
+        "weight": 1
+      }
+    ]
   }
 }
 ```
@@ -69,9 +83,10 @@ unitPriceList | object | The unit price list, keyed by pricing tier ID (see offe
 new | boolean | Is this line marked as new?
 promoted | boolean | Is this line marked as promoted?
 promotedLabel | boolean&#124;null | Label to display for promoted lines
-columnValues | object | The values for each column, keyed by column ID (see the offer columns field)
+columnValues | array | The values for each column, keyed by column ID (see the offer columns field)
 unitsPerCase | int | The number of units per case for the line
 sectionId | integer/null | The section that the line belongs to
+images | array | The images associated with the offer line.
 
 ## Offer Line Index Parameters
 

@@ -98,7 +98,8 @@ Offers are product availability lists that are sent out to current or prospectiv
         "companyId": 70,
         "companyName": "Vancouver Fragrances"
       }
-    ]
+    ],
+    "productImagesShared": true
   }
 }
 ```
@@ -125,6 +126,7 @@ shareKey | string&#124;null | The unique key for the offer out. This is the key 
 shareLink | string&#124;null | The full link sent to prospective customers.
 recipientEmails | array | A list of the email addresses that the offer has been shared with.
 recipientContacts | array | A list of the customers (contacts) that the offer has been shared with.
+productImagesShared | bool | Are the product images to be shared with the customer in this offer?
 
 ## Offer Columns
 
