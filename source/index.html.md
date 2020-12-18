@@ -15,6 +15,9 @@ includes:
   - messages
   - offers
   - offerLines
+  - offerShareRequests
+  - salesNegotiations  
+  - salesNegotiationLines  
   - salesOrders
   - salesOrderLines 
   - unitPriceNegotiations
