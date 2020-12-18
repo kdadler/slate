@@ -27,7 +27,39 @@ Sales negotiations that are currently being processed.
     "invoiceDate": null,
     "reference": "ref001",
     "status": "active",
-    "conditionsOfSale": {"leadTime": "2 weeks"},
+    "conditionsOfSale": [
+      {
+        "type": "deliveryTerms",
+        "typeLabel": "Delivery Terms",
+        "value": "Ex works",
+        "weight": 1,
+        "label": null
+      },
+      {
+        "type": "leadTime",
+        "typeLabel": "Lead Time",
+        "value": "5 weeks",
+        "weight": 2,
+        "label": null
+      },
+      {
+        "type": "extraConditionsOfSale",
+        "typeLabel": "Extra Condition",
+        "value": "Yes",
+        "weight": 3,
+        "label": "Take all"
+      },
+      {
+        "type": "volumeDiscount",
+        "typeLabel": "Volume Discount",
+        "value": {
+          "threshold": 10000,
+          "discountPercentage": 5
+        },
+        "weight": 4,
+        "label": null
+      }
+    ],
     "totals": {
       "sellTotal": "10000",
       "sellTotalBeforeDiscount": "12000",
@@ -51,7 +83,7 @@ invoiceId | null | Always NULL. Included for compatibility with the sales order 
 invoiceDate | null | Always NULL. Included for compatibility with the sales order API format.
 reference | string/null | Custom reference
 status | string | The status of the sales negotiation
-conditionsOfSale | object | The conditions of sale for the sale
+conditionsOfSale | array | The conditions of sale
 totals | object | Sales negotiation's calculated totals, split into categories (see below)
 created | string | Datetime that the sales negotiation was created
 
