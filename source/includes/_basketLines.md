@@ -40,6 +40,7 @@ Lines for a basket.
     "baseUnitPrice": "1055",
     "appliedUnitPrice": "1043",
     "total": "10000",
+    "currencyCode": "GBP",
     "created": "2020-04-06T09:36:35.018Z",
     "updated": "2020-04-06T09:36:35.018Z"
   }
@@ -98,7 +99,8 @@ availableUnitQuantity | int | No | The available units number
 unitsPerCase | int | No | The number of units per case for the line
 baseUnitPrice | string | No | The base unit price, before discounts
 appliedUnitPrice | string | No | The applied unit price.
-total | string | No | The total for the row.
+total | string | No | The line's total value
+currencyCode | string | No | The currency of the line
 created | string | No | The datetime that the entity was created
 updated | string | No | The datetime that the entity was last updated
 
