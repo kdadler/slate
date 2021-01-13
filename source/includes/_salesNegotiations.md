@@ -70,6 +70,59 @@ Sales negotiations that are currently being processed.
       "adjustedSellTotalWithoutTax": "10000",
       "adjustedSellTotalWithTax": "10000"
     },
+    "changes": [
+      {
+        "field": "currencyCode",
+        "action": "changed",
+        "from": "GBP",
+        "to": "EUR",
+        "context": null
+      },
+      {
+        "field": "conditionsOfSale",
+        "action": "changed",
+        "from": [
+          {
+            "type": "deliveryTerms",
+            "typeLabel": "Delivery Terms",
+            "value": "Ex works",
+            "weight": 0,
+            "label": null
+          }
+        ],
+        "to": [
+          {
+            "type": "volumeDiscount",
+            "typeLabel": "Volume Discount",
+            "value": {
+              "threshold": 10000,
+              "discountPercentage": 5
+            },
+            "weight": 0,
+            "label": null
+          }
+        ],
+        "context": null
+      },
+      {
+        "field": "productPrices",
+        "action": "added",
+        "context": {
+          "ean": "02389472934823423",
+          "unitQuantity": 340,
+          "unitPrice": "1050"
+        }
+      },
+      {
+        "field": "productPrices",
+        "action": "removed",
+        "context": {
+          "ean": "5548234895345934578",
+          "unitQuantity": 120,
+          "unitPrice": "869"
+        }
+      }
+    ],
     "created": "2020-04-06T09:36:35.018Z"
   }
 }
@@ -85,6 +138,7 @@ reference | string/null | Custom reference
 status | string | The status of the sales negotiation
 conditionsOfSale | array | The conditions of sale
 totals | object | Sales negotiation's calculated totals, split into categories (see below)
+changes | object | A list of changes made to the entity since the basket was submitted
 created | string | Datetime that the sales negotiation was created
 
 ## Sales Negotiation Total Fields
@@ -116,7 +170,7 @@ Token | Label | Description
 ----- | ----- | -----------
 basket | Basket | The negotiation is being managed by the customer via their basket
 active | Active | The account manager is managing the sales negotiation
-pending-approval | Pending Approval | Pending customer approval
+with-customer | Pending Approval by Customer | Changes have been made and the entity is waiting for the customer to approve them
 complete | Complete | The negotiation is complete and a sales order has been created.
 
 ## Example request
@@ -126,3 +180,11 @@ Example request that will fetch the sales negotiations that are to be displayed 
 ```
 /api/sales-negotiations?status[]=active&status[]=pending-approval&contact=123&order[created]=desc
 ```
+
+## Sales Negotiation Subresources
+
+The sales negotiation resource has the following subresources:
+
+Name | Path | Method | Response | Description
+---- | ---- | ------ | -------- | -----------
+Approve | /api/sales-negotiations/{id}/approve | PUT | Entity data | Approves a sales negotiation. Will fail if entity is not at 'with-customer' status
