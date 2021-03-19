@@ -99,7 +99,8 @@ Offers are product availability lists that are sent out to current or prospectiv
         "companyName": "Vancouver Fragrances"
       }
     ],
-    "productImagesShared": true
+    "productImagesShared": true,
+    "stockQuantityLimit": 2000
   }
 }
 ```
@@ -127,6 +128,7 @@ shareLink | string&#124;null | The full link sent to prospective customers.
 recipientEmails | array | A list of the email addresses that the offer has been shared with.
 recipientContacts | array | A list of the customers (contacts) that the offer has been shared with.
 productImagesShared | bool | Are the product images to be shared with the customer in this offer?
+stockQuantityLimit | int | The upper limit of the stock quantity to display to the customer.
 
 ## Offer Columns
 
