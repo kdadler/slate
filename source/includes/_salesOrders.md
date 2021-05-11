@@ -46,6 +46,8 @@ Orders that are currently being processed, or have been completed.
       "adjustedSellTotalWithoutTax": "10000",
       "adjustedSellTotalWithTax": "10000"
     },
+    "packingListAvailable": false,
+    "invoiceAvailable": true,
     "created": "2020-04-06T09:36:35.018Z"
   }
 }
@@ -62,6 +64,8 @@ status | int | The status of the order
 conditionsOfSale | object | The conditions of sale for the order
 customerConditionsOfSale | array | The above conditions formatted for display to the customer
 totals | object | Sales order calculated totals, split into categories (see below)
+packingListAvailable | bool | Is the packing list file available to be downloaded?
+invoiceAvailable | bool | Is the invoice file available to be downloaded?
 created | string | Datetime that the sales order was created
 
 ## Sales Order Total Fields
