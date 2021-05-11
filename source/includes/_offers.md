@@ -44,7 +44,7 @@ Offers are product availability lists that are sent out to current or prospectiv
       {
         "type": "extraConditionsOfSale",
         "typeLabel": "Extra Condition",
-        "value": "Yes",
+        "value": null,
         "weight": 3,
         "label": "Take all"
       },
@@ -58,6 +58,12 @@ Offers are product availability lists that are sent out to current or prospectiv
         "weight": 4,
         "label": null
       }
+    ],
+    "customerConditionsOfSale": [
+      { "label": "Delivery Terms", "value": "Ex Works" },
+      { "label": "Lead Time", "value": "5 weeks" },
+      { "label": "Take All", "value": null },
+      { "label": "Volume Discount", "value": "5% at €10,000" }
     ],
     "expiresOn": "2020-04-06T00:00:00.000Z",
     "currencyCode":  "EUR",
@@ -112,7 +118,8 @@ idString | string | Unique identifier, in a human readable format
 name | string | The offer's name 
 description | string | HTML description 
 status | string | The status token for the offer.
-conditionsOfSale | object | The conditions of any sales made from products in this offer. Includes global discount criteria.
+conditionsOfSale | array | The conditions of any sales made from products in this offer. Includes global discount criteria.
+customerConditionsOfSale | array | The above conditions formatted for display to the customer
 expiresOn | string&#124;null | Date of the expiry of the offer. 
 currencyCode | string | Code of the currency that the offer is being made in
 productCount | int | A count of the number of products in the offer.
@@ -129,6 +136,15 @@ recipientEmails | array | A list of the email addresses that the offer has been 
 recipientContacts | array | A list of the customers (contacts) that the offer has been shared with.
 productImagesShared | bool | Are the product images to be shared with the customer in this offer?
 stockQuantityLimit | int | The upper limit of the stock quantity to display to the customer.
+
+## Offer Customer Conditions of Sale
+
+The customer conditions of sale are returned as an array of objects with label / value keys. The following rules should
+be followed when rendering the conditions:
+
+* They should be rendered in the order provided by the API
+* If a condition's value is not null and not empty, it should be rendered as `{{ condition.label }} - {{ condition.value }}`
+* If a condition's value is null or empty, it should be rendered as `{{ condition.label }}`
 
 ## Offer Columns
 

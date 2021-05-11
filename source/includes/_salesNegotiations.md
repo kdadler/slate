@@ -60,6 +60,12 @@ Sales negotiations that are currently being processed.
         "label": null
       }
     ],
+    "customerConditionsOfSale": [
+      { "label": "Delivery Terms", "value": "Ex Works" },
+      { "label": "Lead Time", "value": "5 weeks" },
+      { "label": "Take All", "value": null },
+      { "label": "Volume Discount", "value": "5% at €10,000" }
+    ],
     "totals": {
       "sellTotal": "10000",
       "sellTotalBeforeDiscount": "12000",
@@ -137,6 +143,7 @@ invoiceDate | null | Always NULL. Included for compatibility with the sales orde
 reference | string/null | Custom reference
 status | string | The status of the sales negotiation
 conditionsOfSale | array | The conditions of sale
+customerConditionsOfSale | array | The above conditions formatted for display to the customer
 totals | object | Sales negotiation's calculated totals, split into categories (see below)
 changes | object | A list of changes made to the entity since the basket was submitted
 created | string | Datetime that the sales negotiation was created
@@ -153,6 +160,15 @@ preTaxPriceAdjustment | string | The value of the price adjustments applied pre-
 postTaxPriceAdjustment | string | The value of the price adjustments applied post-tax
 adjustedSellTotalWithoutTax | string | The net total
 adjustedSellTotalWithTax | string | The gross total
+
+## Sales Negotiation Conditions of Sale
+
+The customer conditions of sale are returned as an array of objects with label / value keys. The following rules should
+be followed when rendering the conditions:
+
+* They should be rendered in the order provided by the API
+* If a condition's value is not null and not empty, it should be rendered as `{{ condition.label }} - {{ condition.value }}`
+* If a condition's value is null or empty, it should be rendered as `{{ condition.label }}`
 
 ## Sales Negotiation Index Parameters
 
