@@ -76,7 +76,8 @@ contact may only have 1 active basket at any given time.
           "lineTotal": "10000",
           "discountedLineTotal": "8000",
           "discountPercentage": 20,
-          "grossTotal": "8000"
+          "grossTotal": "8000",
+          "totalDiscountValue": "2000"
         }
       ]
     },

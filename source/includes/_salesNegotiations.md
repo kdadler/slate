@@ -26,7 +26,7 @@ Sales negotiations that are currently being processed.
     "invoiceId": null,
     "invoiceDate": null,
     "reference": "ref001",
-    "status": "active",
+    "status": "Pending",
     "conditionsOfSale": [
       {
         "type": "deliveryTerms",
@@ -141,7 +141,7 @@ currencyCode | string | The currency of the sale
 invoiceId | null | Always NULL. Included for compatibility with the sales order API format.
 invoiceDate | null | Always NULL. Included for compatibility with the sales order API format.
 reference | string/null | Custom reference
-status | string | The status of the sales negotiation
+status | string | The human-readable status for the sales negotiation
 conditionsOfSale | array | The conditions of sale
 customerConditionsOfSale | array | The above conditions formatted for display to the customer
 totals | object | Sales negotiation's calculated totals, split into categories (see below)

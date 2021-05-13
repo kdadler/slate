@@ -28,7 +28,7 @@ Orders that are currently being processed, or have been completed.
     "invoiceId": "IN-92384972",
     "invoiceDate": "2020-04-06T09:36:35.018Z",
     "reference": "ref001",
-    "status": 60,
+    "status": "Invoiced",
     "conditionsOfSale": {"leadTime": "2 weeks"},
     "customerConditionsOfSale": [
       { "label": "Delivery Terms", "value": "Ex Works" },
@@ -60,7 +60,7 @@ currencyCode | string | The currency of the order
 invoiceId | string/null | The ID of the order's invoice
 invoiceDate | string/null | The date of the creation of the invoice
 reference | string/null | Custom order reference
-status | int | The status of the order
+status | string | The status of the order
 conditionsOfSale | object | The conditions of sale for the order
 customerConditionsOfSale | array | The above conditions formatted for display to the customer
 totals | object | Sales order calculated totals, split into categories (see below)
