@@ -61,6 +61,12 @@ contact may only have 1 active basket at any given time.
             "weight": 4,
             "label": null
           }
+        ],
+        "customerConditionsOfSale": [
+          { "label": "Delivery Terms", "value": "Ex Works" },
+          { "label": "Lead Time", "value": "5 weeks" },
+          { "label": "Take All", "value": null },
+          { "label": "Volume Discount", "value": "5% at €10,000" }
         ]
       }
     ],
