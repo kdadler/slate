@@ -8,33 +8,23 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - accountRequest
-  - baskets
-  - basketLines
+  - companies
   - contacts
-  - messages
-  - offers
-  - offerLines
-  - offerShareRequests
-  - salesNegotiations  
-  - salesNegotiationLines  
-  - salesOrders
-  - salesOrderLines 
-  - unitPriceNegotiations
-  - usageData
-  - errors
-  - ztodo
+  - salesNegotiations
+  - users
 
 search: true
 ---
 
 # Introduction
 
-WIP version of the internal API docs for Yoda. Is REST.
+WIP version of the Yoda public API documentation. 
 
 # Making a Request
 
-> base path
+The Yoda API follows a RESTful design.
+
+> URL
 
 ```
 {base_url}/api/{entity_type}(/{id})
@@ -45,10 +35,10 @@ WIP version of the internal API docs for Yoda. Is REST.
 ```json
 {
   "Accept": "application/vnd.api+json",
-  "content-type": "application/vnd.api+json"
+  "Content-Type": "application/api"
 }
 ```
 
 ## Authentication
 
-TBC, possibly something like JWT?
+TBC, likely Oauth2
