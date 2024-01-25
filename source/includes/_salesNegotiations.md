@@ -6,7 +6,7 @@
 /sales-negotiations
 ```
 
-Sales negotiations that are currently being processed.
+Sales that are at the negotiation stage with the customer.
 
 ## Sales Negotiation Available Verbs
 
@@ -134,73 +134,39 @@ Sales negotiations that are currently being processed.
 }
 ```
 
-Field | Type | Description
------ | ---  | -----------
-id | string | Unique identifier
-currencyCode | string | The currency of the sale
-invoiceId | null | Always NULL. Included for compatibility with the sales order API format.
-invoiceDate | null | Always NULL. Included for compatibility with the sales order API format.
-reference | string/null | Custom reference
-status | string | The human-readable status for the sales negotiation
-conditionsOfSale | array | The conditions of sale
-customerConditionsOfSale | array | The above conditions formatted for display to the customer
-totals | object | Sales negotiation's calculated totals, split into categories (see below)
-changes | object | A list of changes made to the entity since the basket was submitted
-created | string | Datetime that the sales negotiation was created
+| Field                    | Type        | Description                                                              |
+|--------------------------|-------------|--------------------------------------------------------------------------|
+| id                       | string      | Unique identifier                                                        |
+| currencyCode             | string      | The currency of the sale                                                 |
+| invoiceId                | null        | Always NULL. Included for compatibility with the sales order API format. |
+| invoiceDate              | null        | Always NULL. Included for compatibility with the sales order API format. |
+| reference                | string/null | Custom reference                                                         |
+| status                   | string      | The human-readable status for the sales negotiation                      |
+| conditionsOfSale         | array       | The conditions of sale                                                   |
+| customerConditionsOfSale | array       | The above conditions formatted for display to the customer               |
+| totals                   | object      | Sales negotiation's calculated totals, split into categories (see below) |
+| changes                  | object      | A list of changes made to the entity since the basket was submitted      |
+| created                  | string      | Datetime that the sales negotiation was created                          |
 
 ## Sales Negotiation Total Fields
 
-Field | Type | Description
------ | ---- | -----------
-sellTotal | string | The product total with the discount applied
-sellTotalBeforeDiscount | string | The product total without the discount applied
-sellDiscountPercent | int | The discount percent applied.
-sellTax | string | The tax applied
-preTaxPriceAdjustment | string | The value of the price adjustments applied pre-tax
-postTaxPriceAdjustment | string | The value of the price adjustments applied post-tax
-adjustedSellTotalWithoutTax | string | The net total
-adjustedSellTotalWithTax | string | The gross total
+| Field                       | Type   | Description                                         |
+|-----------------------------|--------|-----------------------------------------------------|
+| sellTotal                   | string | The product total with the discount applied         |
+| sellTotalBeforeDiscount     | string | The product total without the discount applied      |
+| sellDiscountPercent         | int    | The discount percent applied.                       |
+| sellTax                     | string | The tax applied                                     |
+| preTaxPriceAdjustment       | string | The value of the price adjustments applied pre-tax  |
+| postTaxPriceAdjustment      | string | The value of the price adjustments applied post-tax |
+| adjustedSellTotalWithoutTax | string | The net total                                       |
+| adjustedSellTotalWithTax    | string | The gross total                                     |
 
-## Sales Negotiation Conditions of Sale
+## Sales Negotiation Query Parameters
 
-The customer conditions of sale are returned as an array of objects with label / value keys. The following rules should
-be followed when rendering the conditions:
-
-* They should be rendered in the order provided by the API
-* If a condition's value is not null and not empty, it should be rendered as `{{ condition.label }} - {{ condition.value }}`
-* If a condition's value is null or empty, it should be rendered as `{{ condition.label }}`
-
-## Sales Negotiation Index Parameters
-
-Name | Type | Match | Default | Description
----- | ---- | ----- | ------- | -----------
-contact | string | exact | null | The contact that the sales negotiation must be associated with
-status | string | exact | null | Specify the status of the sales negotiations to be returned
-order\[created] | string | exact | asc | Order the results by created date
-itemsPerPage | int | exact | 25 | The number of items to return per page
-page | int | exact | 1 | The page of results to return
-
-## Sales Negotiation Statuses
-
-Token | Label | Description
------ | ----- | -----------
-basket | Basket | The negotiation is being managed by the customer via their basket
-active | Active | The account manager is managing the sales negotiation
-with-customer | Pending Approval by Customer | Changes have been made and the entity is waiting for the customer to approve them
-complete | Complete | The negotiation is complete and a sales order has been created.
-
-## Example request
-
-Example request that will fetch the sales negotiations that are to be displayed to the customer as orders.
-
-```
-/api/sales-negotiations?status[]=active&status[]=pending-approval&contact=123&order[created]=desc
-```
-
-## Sales Negotiation Subresources
-
-The sales negotiation resource has the following subresources:
-
-Name | Path | Method | Response | Description
----- | ---- | ------ | -------- | -----------
-Approve | /api/sales-negotiations/{id}/approve | PUT | Entity data | Approves a sales negotiation. Will fail if entity is not at 'with-customer' status
+| Name            | Type   | Match | Default | Description                                                    |
+|-----------------|--------|-------|---------|----------------------------------------------------------------|
+| contact         | string | exact | null    | The contact that the sales negotiation must be associated with |
+| status          | string | exact | null    | Specify the status of the sales negotiations to be returned    |
+| order\[created] | string | exact | asc     | Order the results by created date                              |
+| itemsPerPage    | int    | exact | 25      | The number of items to return per page                         |
+| page            | int    | exact | 1       | The page of results to return                                  |
