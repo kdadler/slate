@@ -8,6 +8,7 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - auth
   - companies
   - contacts
   - salesNegotiations
@@ -38,7 +39,3 @@ The Yoda API follows a RESTful design.
   "Content-Type": "application/api"
 }
 ```
-
-## Authentication
-
-TBC, likely Oauth2
