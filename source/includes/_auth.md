@@ -11,6 +11,16 @@ request must include the following headers:
 * Accept: application/api
 * Content-Type: application/api
 
+> Example token request body
+
+```json
+{
+  "grant_type": "client_credentials",
+  "client_id": "MY_CLIENT_ID",
+  "client_secret": "MY_CLIENT_ID"
+}
+```
+
 The request body must include the following fields:
 
 | Field         | Type   | Description                            |
@@ -19,13 +29,13 @@ The request body must include the following fields:
 | client_id     | string | The client ID provided by our team     |
 | client_secret | string | The client secret provided by our team |
 
-> Example request body
+> Example token response body
 
 ```json
 {
-  "grant_type": "client_credentials",
-  "client_id": "MY_CLIENT_ID",
-  "client_secret": "MY_CLIENT_ID"
+    "token_type": "Bearer",
+    "expires_in": 3600,
+    "access_token": "ACCESS_TOKEN"
 }
 ```
 
@@ -37,23 +47,13 @@ If successful, the token request will return a response with the following field
 | expires_in   | int    | The number of seconds until the token expires |
 | token_type   | string | The type of token. Will always be `Bearer`    |
 
-> Example response body
-
-```json
-{
-    "token_type": "Bearer",
-    "expires_in": 3600,
-    "access_token": "ACCESS_TOKEN"
-}
-```
-
 ### Using the Access Token
-
-Once you have an access token, you can use it to make requests to the API. The access token must be included in the
-`Authorization` header of each request. The header must be set to `Bearer {access_token}`.
 
 > Example request header
 
 ```
 Authorization: Bearer ACCESS_TOKEN
 ```
+
+Once you have an access token, you can use it to make requests to the API. The access token must be included in the
+`Authorization` header of each request. The header must be set to `Bearer {access_token}`.
