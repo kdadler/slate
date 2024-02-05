@@ -52,8 +52,8 @@ If successful, the token request will return a response with the following field
 > Example request header
 
 ```
-Authorization: Bearer ACCESS_TOKEN
+Authorization: Bearer {ACCESS_TOKEN}
 ```
 
 Once you have an access token, you can use it to make requests to the API. The access token must be included in the
-`Authorization` header of each request. The header must be set to `Bearer {access_token}`.
+`Authorization` header of each request. The header must be set to `Bearer {ACCESS_TOKEN}`.

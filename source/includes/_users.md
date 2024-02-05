@@ -3,10 +3,10 @@
 > Path
 
 ```
-/sales-negotiations
+/users
 ```
 
-Sales that are at the negotiation stage with the customer.
+Users of the system.
 
 ## User Available Verbs
 
@@ -29,22 +29,24 @@ Sales that are at the negotiation stage with the customer.
       "email": "jonathan.day@simitive.com",
       "enabled": true,
       "fullName": "Jonathan Day",
+      "crmId": "1234567890",
       "updated": null
     }
   }
 }
 ```
 
-| Field                    | Type        | Description                                                              |
-|--------------------------|-------------|--------------------------------------------------------------------------|
-| id                       | integer     | The unique identifier of the user                                        |
-| forename                 | string      | The forename of the user                                                 |
-| surname                  | string      | The surname of the user                                                  |
-| username                 | string      | The username of the user                                                 |
-| email                    | string      | The email address of the user                                            |
-| enabled                  | boolean     | Whether the user is enabled                                              |
-| fullName                 | string      | The full name of the user                                                |
-| updated                  | string/null | The date and time the user was last updated                              |
+| Field    | Type        | Description                                 |
+|----------|-------------|---------------------------------------------|
+| id       | integer     | The unique identifier of the user           |
+| forename | string      | The forename of the user                    |
+| surname  | string      | The surname of the user                     |
+| username | string      | The username of the user                    |
+| email    | string      | The email address of the user               |
+| enabled  | boolean     | Whether the user is enabled                 |
+| fullName | string      | The full name of the user                   |
+| crmId    | string      | The unique identifier in the CRM system     |
+| updated  | string/null | The date and time the user was last updated |
 
 ## User Query Parameters
 

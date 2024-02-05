@@ -46,14 +46,25 @@ Customer and supplier records.
         "postcode": "MM1 1EE",
         "country": "UK"
       },
-      "deliveryAddress": {
-        "addressLineOne": "1 Monster Road",
-        "addressLineTwo": "Monster Town",
-        "townCity": "Monster City",
-        "region": "Monster County",
-        "postcode": "MM1 1EE",
-        "country": "UK"
-      },
+      "deliveryAddresses": [
+        {
+          "addressLineOne": "1 Monster Road",
+          "addressLineTwo": "Monster Town",
+          "townCity": "Monster City",
+          "region": "Monster County",
+          "postcode": "MM1 1EE",
+          "country": "UK"
+        },
+        {
+          "addressLineOne": "3 Monster Road",
+          "addressLineTwo": "Monster Town",
+          "townCity": "Monster City",
+          "region": "Monster County",
+          "postcode": "MM1 1EE",
+          "country": "UK"
+        }
+      ],
+      "crmId": "1234567890",
       "created": "2020-01-01T00:00:00+00:00",
       "updated": "2020-01-01T00:00:00+00:00"
     },
@@ -79,6 +90,24 @@ Customer and supplier records.
             "type": "DeliveryTerm"
           }
         ]
+      },
+      "invoiceAddress": {
+        "data": {
+          "id": "/api/addresses/1",
+          "type": "Address"
+        }
+      },
+      "deliveryAddresses": {
+        "data": [
+          {
+            "id": "/api/addresses/2",
+            "type": "Address"
+          },
+          {
+            "id": "/api/addresses/3",
+            "type": "Address"
+          }
+        ]
       }
     }
   }
@@ -101,51 +130,37 @@ Customer and supplier records.
   "companyType": "",
   "emailAddress": "billy@crystal.com",
   "phoneNumberValue": "0129827394",
-  "invoiceAddress": {
-    "addressLineOne": "1 Monster Road",
-    "addressLineTwo": "Monster Town",
-    "townCity": "Monster City",
-    "region": "Monster County",
-    "postcode": "MM1 1EE",
-    "country": "UK"
-  },
-  "deliveryAddress": {
-    "addressLineOne": "1 Monster Road",
-    "addressLineTwo": "Monster Town",
-    "townCity": "Monster City",
-    "region": "Monster County",
-    "postcode": "MM1 1EE",
-    "country": "UK"
-  },
   "paymentTerm": "/api/payment-terms/1",
-  "deliveryTerm": "/api/delivery-terms/1"
+  "deliveryTerm": "/api/delivery-terms/1",
+  "crmId": "1234567890"
 }
         
 ```
 
 > Field list
 
-| Field                  | Type   | Description                                    | Read | Write | Required |
-|------------------------|--------|------------------------------------------------|------|-------|----------|
-| id                     | int    | Unique identifier                              | Y    | N     |
-| companyName            | string | The company's name                             | Y    | Y     | Y        |
-| companyNumber          | string | The company number                             | Y    | Y     |
-| vatNumber              | string | The VAT number                                 | Y    | Y     |
-| taxCode                | string | The company's tax code                         | Y    | Y     |
-| dutchVatTerm           | string | The company's Dutch VAT term                   | Y    | Y     |
-| regionOfOperation      | string | The company's region of operation              | Y    | Y     |
-| creditLimit            | string | The company's credit limit                     | Y    | Y     |
-| currency               | string | The company's currency                         | Y    | Y     |
-| eoriNumber             | string | The company's EORI number                      | Y    | Y     |
-| companyType            | string | The company's type                             | Y    | Y     |
-| emailAddress           | string | The company's email address                    | Y    | Y     |
-| phoneNumber            | string | The company's phone number                     | Y    | Y     |
-| invoiceAddress         | object | The company's invoice address                  | Y    | Y     |
-| deliveryAddress        | object | The company's delivery address                 | Y    | Y     |
-| paymentTerm            | iri    | The company's default payment term             | Y    | Y     |
-| deliveryTerm           | iri    | The company's default delivery term            | Y    | Y     |
-| created                | string | The date and time the company was created      | Y    | N     |
-| updated                | string | The date and time the company was last updated | Y    | N     |
+| Field             | Type   | Description                                    | Read | Write | Required |
+|-------------------|--------|------------------------------------------------|------|-------|----------|
+| id                | int    | Unique identifier                              | Y    | N     |
+| companyName       | string | The company's name                             | Y    | Y     | Y        |
+| companyNumber     | string | The company number                             | Y    | Y     |
+| vatNumber         | string | The VAT number                                 | Y    | Y     |
+| taxCode           | string | The company's tax code                         | Y    | Y     |
+| dutchVatTerm      | string | The company's Dutch VAT term                   | Y    | Y     |
+| regionOfOperation | string | The company's region of operation              | Y    | Y     |
+| creditLimit       | string | The company's credit limit                     | Y    | Y     |
+| currency          | string | The company's currency                         | Y    | Y     |
+| eoriNumber        | string | The company's EORI number                      | Y    | Y     |
+| companyType       | string | The company's type                             | Y    | Y     |
+| emailAddress      | string | The company's email address                    | Y    | Y     |
+| phoneNumber       | string | The company's phone number                     | Y    | Y     |
+| invoiceAddress    | object | The company's invoice address                  | Y    | Y     |
+| deliveryAddress   | object | The company's delivery address                 | Y    | Y     |
+| paymentTerm       | iri    | The company's default payment term             | Y    | Y     |
+| deliveryTerm      | iri    | The company's default delivery term            | Y    | Y     |
+| crmId             | string | The unique identifier in the CRM system        | Y    | Y     |
+| created           | string | The date and time the company was created      | Y    | N     |
+| updated           | string | The date and time the company was last updated | Y    | N     |
 
 ## Company Relationships
 

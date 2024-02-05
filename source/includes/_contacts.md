@@ -28,28 +28,12 @@ Points of contacts with customers/suppliers.
     "isPrimary": true,
     "fullName": "Billy Crystal",
     "emailAddress": "billy@gmail.com",
-    "phoneNumberValue": "0129827394",
+    "phoneNumber": "0129827394",
     "companyName": "Monsters Inc",
     "companyNumber": "0000000000",
     "vatNumber": "0000000000",
-    "defaultSalespersonId": 1,
     "defaultSalespersonName": "Jonathan Day",
-    "invoiceAddress": {
-      "addressLineOne": "1 Monster Road",
-      "addressLineTwo": "Monster Town",
-      "townCity": "Monster City",
-      "region": "Monster County",
-      "postcode": "MM1 1EE",
-      "country": "UK"
-    },
-    "deliveryAddress": {
-      "addressLineOne": "1 Monster Road",
-      "addressLineTwo": "Monster Town",
-      "townCity": "Monster City",
-      "region": "Monster County",
-      "postcode": "MM1 1EE",
-      "country": "UK"
-    },
+    "crmId": "1234567890",
     "created": "2020-01-01T00:00:00+00:00",
     "updated": "2020-01-01T00:00:00+00:00"
   },
@@ -58,6 +42,12 @@ Points of contacts with customers/suppliers.
       "data": {
         "id": "/api/companies/1",
         "type": "Company"
+      }
+    },
+    "defaultSalespersonName": {
+      "data": {
+        "id": "/api/users/1",
+        "type": "User"
       }
     }
   }
@@ -71,23 +61,8 @@ Points of contacts with customers/suppliers.
   "company": "/api/companies/1",
   "fullName": "Billy Crystal",
   "emailAddress": "",
-  "phoneNumberValue": "0129827394",
-  "invoiceAddress": {
-    "addressLineOne": "1 Monster Road",
-    "addressLineTwo": "Monster Town",
-    "townCity": "Monster City",
-    "region": "Monster County",
-    "postcode": "MM1 1EE",
-    "country": "UK"
-  },
-  "deliveryAddress": {
-    "addressLineOne": "1 Monster Road",
-    "addressLineTwo": "Monster Town",
-    "townCity": "Monster City",
-    "region": "Monster County",
-    "postcode": "MM1 1EE",
-    "country": "UK"
-  }
+  "phoneNumber": "0129827394",
+  "crmId": "1234567890"
 }
         
 ```
@@ -103,19 +78,18 @@ Points of contacts with customers/suppliers.
 | companyName            | string | The name of the company the contact belongs to            | Y    | N     |
 | companyNumber          | string | The company number for the company the contact belongs to | Y    | N     |
 | vatNumber              | string | The VAT number for the company the contact belongs to     | Y    | N     |
-| defaultSalespersonId   | int    | The unique ID of the default salesperson for the contact  | Y    | N     |
 | defaultSalespersonName | string | The name of the default salesperson for the contact       | Y    | N     |
-| invoiceAddress         | object | The invoice address for the contact's company             | Y    | Y     |
-| deliveryAddress        | object | The delivery address for the contact's company            | Y    | Y     |
 | company                | iri    | The IRI of the company the contact belongs to             | N    | Y     | Y        |
+| crmId                  | string | The unique identifier in the CRM system                   | Y    | Y     |
 | created                | string | The date the contact was created                          | Y    | N     |
 | updated                | string | The date the contact was last updated                     | Y    | N     |
 
 ## Contact Relationships
 
-| Relationship | Description                        | Read | Write |
-|--------------|------------------------------------|------|-------|
-| company      | The company the contact belongs to | Y    | Y     |
+| Relationship       | Description                                        | Read | Write |
+|--------------------|----------------------------------------------------|------|-------|
+| company            | The company the contact belongs to                 | Y    | Y     |
+| defaultSalesperson | The default salesperson for the associated company | Y    | Y     |
 
 ## Contact Query Parameters
 

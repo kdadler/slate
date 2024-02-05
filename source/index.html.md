@@ -9,8 +9,11 @@ toc_footers:
 
 includes:
   - auth
+  - addresses
   - companies
   - contacts
+  - deliveryTerms
+  - paymentTerms
   - salesNegotiations
   - users
 
