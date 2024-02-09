@@ -19,7 +19,7 @@ Delivery terms that a customer can hold which will apply to their orders.
 ```json
 {
   "data": {
-    "id": "/api/delivery-terms/1",
+    "id": "/api/v1/delivery-terms/1",
     "type": "DeliveryTerm",
     "attributes": {
       "id": 1,
@@ -44,10 +44,10 @@ Delivery terms that a customer can hold which will apply to their orders.
 
 ## Delivery Term Query Parameters
 
-| Filter       | Description                                     | Example                             | Detail           | 
-|--------------|-------------------------------------------------|-------------------------------------|------------------|
-| id           | Filter by entity ID                             | /api/delivery-terms?id=1            | Exact match only |
-| label        | Filter by term's label                          | /api/delivery-terms?label=Ex        | Partial match    |
-| active       | Filter by the active flag against terms         | /api/delivery-terms?active=1        | Boolean          |
-| itemsPerPage | Set the number of items per page to be returned | /api/delivery-terms?itemsPerPage=50 | Defaults to 25   |
-| page         | Set the page of results to return               | /api/delivery-terms?page=3          | Defaults to 1    |
+| Filter       | Description                                     | Example                                | Detail           | 
+|--------------|-------------------------------------------------|----------------------------------------|------------------|
+| id           | Filter by entity ID                             | /api/v1/delivery-terms?id=1            | Exact match only |
+| label        | Filter by term's label                          | /api/v1/delivery-terms?label=Ex        | Partial match    |
+| active       | Filter by the active flag against terms         | /api/v1/delivery-terms?active=1        | Boolean          |
+| itemsPerPage | Set the number of items per page to be returned | /api/v1/delivery-terms?itemsPerPage=50 | Defaults to 25   |
+| page         | Set the page of results to return               | /api/v1/delivery-terms?page=3          | Defaults to 1    |

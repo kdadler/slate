@@ -19,7 +19,7 @@ Users of the system.
 ```json
 {
   "data": {
-    "id": "/api/users/1",
+    "id": "/api/v1/users/1",
     "type": "User",
     "attributes": {
       "id": 1,
@@ -50,10 +50,10 @@ Users of the system.
 
 ## User Query Parameters
 
-| Filter       | Description                                             | Example                         | Detail              | 
-|--------------|---------------------------------------------------------|---------------------------------|---------------------|
-| forename     | Filter by entity ID                                     | /api/users?forename=ted         | Exact match only    |
-| surname      | Filter by company's name                                | /api/users?surname=lasso        | Partial match       |
-| itemsPerPage | Set the number of items per page to be returned         | /api/users?itemsPerPage=50      | Defaults to 25      |
-| page         | Set the page of results to return                       | /api/users?page=3               | Defaults to 1       |
-| order        | Set the order of results. Supports forename and surname | /api/users?order\[forename]=asc | Accepts asc or desc |
+| Filter       | Description                                             | Example                            | Detail              | 
+|--------------|---------------------------------------------------------|------------------------------------|---------------------|
+| forename     | Filter by entity ID                                     | /api/v1/users?forename=ted         | Exact match only    |
+| surname      | Filter by company's name                                | /api/v1/users?surname=lasso        | Partial match       |
+| itemsPerPage | Set the number of items per page to be returned         | /api/v1/users?itemsPerPage=50      | Defaults to 25      |
+| page         | Set the page of results to return                       | /api/v1/users?page=3               | Defaults to 1       |
+| order        | Set the order of results. Supports forename and surname | /api/v1/users?order\[forename]=asc | Accepts asc or desc |

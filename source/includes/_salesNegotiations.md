@@ -18,7 +18,7 @@ Sales that are at the negotiation stage with the customer.
 
 ```json
 {
-  "id": "/api/sales-negotiations/1",
+  "id": "/api/v1/sales-negotiations/1",
   "type": "SalesNegotiationDataContainer",
   "attributes": {
     "id": 1,

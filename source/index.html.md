@@ -12,6 +12,7 @@ includes:
   - addresses
   - companies
   - contacts
+  - customFields
   - deliveryTerms
   - paymentTerms
   - salesNegotiations
@@ -31,7 +32,7 @@ The Yoda API follows a RESTful design.
 > URL
 
 ```
-{base_url}/api/{entity_type}(/{id})
+{base_url}/api/v1/{entity_type}(/{id})
 ```
 
 > Headers
