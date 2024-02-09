@@ -35,7 +35,8 @@ Customer and supplier records.
       "creditLimit": "€100,000.00",
       "currency": "GBP",
       "eoriNumber": "xxxxxxxx",
-      "companyType": "",
+      "companyType": "trader",
+      "companyTypeLabel": "Trader",
       "emailAddress": "billy@crystal.com",
       "phoneNumberValue": "0129827394",
       "invoiceAddressData": {
@@ -140,7 +141,7 @@ Customer and supplier records.
   "creditLimit": "€100,000.00",
   "currency": "GBP",
   "eoriNumber": "xxxxxxxx",
-  "companyType": "",
+  "companyType": "trader",
   "emailAddress": "billy@crystal.com",
   "phoneNumberValue": "0129827394",
   "paymentTerm": "/api/v1/payment-terms/1",
@@ -164,6 +165,7 @@ Customer and supplier records.
 | companyName         | string           | The company's name                             | Y    | Y     | Y        |
 | companyNumber       | string&#124;null | The company number                             | Y    | Y     |
 | companyType         | string&#124;null | The company's type                             | Y    | Y     |
+| companyTypeLabel    | string&#124;null | The human readable label of the company type   | Y    | N     |
 | emailAddress        | string&#124;null | The company's email address                    | Y    | Y     |
 | vatNumber           | string&#124;null | The VAT number                                 | Y    | Y     |
 | eoriNumber          | string&#124;null | The company's EORI number                      | Y    | Y     |
