@@ -215,23 +215,37 @@ When creating or updating companies, the following validation rules will be appl
 
 NOTE: Field value types must conform to the types specified in the field list above.
 
-| Field                   | Rule                                                                                                                               |
-|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| isCustomer & isSupplier | * One or both flags must be `true`                                                                                                 |
-| companyName             | * Required<br/> * Must not be empty<br/> * Must be unique<br/> * Max 500 characters                                                |
-| companyNumber           | * Max 50 characters                                                                                                                |
-| companyType             | * Must be one of: `distributor`, `manufacturer`, `trader`, `wholesaler`, `retail_chain`, `retail_e_commerce`, `retail_independent` |
-| emailAddress            | * Must be a valid email address                                                                                                    |
-| vatNumber               | * Max 50 characters                                                                                                                |
-| eoriNumber              | * Max 50 characters                                                                                                                |
-| taxCode                 | * Max 50 characters                                                                                                                |
-| dutchVatTerm            | * Max 50 characters                                                                                                                |
-| regionOfOperation       | * Max 50 characters                                                                                                                |
-| phoneNumber             | * Must be a valid phone number                                                                                                     |
-| currency                | * Must be one of: `GBP`, `EUR`, `USD`                                                                                              |
-| creditLimit             | * Max 255 characters                                                                                                               |
-| crmId                   | * Max 255 characters                                                                                                               |
-| customFieldData         | _See custom fields section for validation rules_                                                                                   |
-| defaultSalesperson      | * Must be a valid user IRI                                                                                                         |
-| paymentTerm             | * Must be a valid payment term IRI                                                                                                 |
-| deliveryTerm            | * Must be a valid delivery term IRI                                                                                                |
+| Field                   | Rule                                                                                |
+|-------------------------|-------------------------------------------------------------------------------------|
+| isCustomer & isSupplier | * One or both flags must be `true`                                                  |
+| companyName             | * Required<br/> * Must not be empty<br/> * Must be unique<br/> * Max 500 characters |
+| companyNumber           | * Max 50 characters                                                                 |
+| companyType             | * Must be a valid company type (see list below)                                     |
+| emailAddress            | * Must be a valid email address                                                     |
+| vatNumber               | * Max 50 characters                                                                 |
+| eoriNumber              | * Max 50 characters                                                                 |
+| taxCode                 | * Max 50 characters                                                                 |
+| dutchVatTerm            | * Max 50 characters                                                                 |
+| regionOfOperation       | * Max 50 characters                                                                 |
+| phoneNumber             | * Must be a valid phone number                                                      |
+| currency                | * Must be one of: `GBP`, `EUR`, `USD`                                               |
+| creditLimit             | * Max 255 characters                                                                |
+| crmId                   | * Max 255 characters                                                                |
+| customFieldData         | _See custom fields section for validation rules_                                    |
+| defaultSalesperson      | * Must be a valid user IRI                                                          |
+| paymentTerm             | * Must be a valid payment term IRI                                                  |
+| deliveryTerm            | * Must be a valid delivery term IRI                                                 |
+
+## Company Types
+
+The following company types are available:
+
+| Type               | Label              |
+|--------------------|--------------------|
+| distributor        | Distributor        |
+| manufacturer       | Manufacturer       |
+| trader             | Trader             |
+| wholesaler         | Wholesaler         |
+| retail_chain       | Retail Chain       |
+| retail_e_commerce  | Retail E-commerce  |
+| retail_independent | Retail Independent |
