@@ -126,6 +126,6 @@ NOTE: Field value types must conform to the types specified in the field list ab
 | townCity       | * Required<br/> * Must not be empty<br/> * Max 150 characters                                                                                          |
 | region         | * Max 150 characters                                                                                                                                   |
 | postcode       | * Required<br/> * Must not be empty<br/> * Max 15 characters                                                                                           |
-| country        | * Required<br/> * Must not be empty<br/> * Must be an [ISO 3166 country name](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) or A2 code |
+| country        | * Required<br/> * Must not be empty<br/> * Must be an [ISO 3166 country name or A2 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) |
 | crmId          | * Max 255 characters                                                                                                                                   |
 | company        | * Must be a valid company IRI                                                                                                                          |
