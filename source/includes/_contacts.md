@@ -77,22 +77,22 @@ Points of contacts with customers/suppliers.
 
 > Field list
 
-| Field                  | Type         | Description                                               | Read | Write | Required |
-|------------------------|--------------|-----------------------------------------------------------|------|-------|----------|
-| id                     | int          | Unique identifier                                         | Y    | N     |
-| fullName               | string       | Full name of the contact                                  | Y    | Y     | Y        |
-| emailAddress           | string\|null | The contact's email address                               | Y    | Y     |
-| phoneNumber            | string\|null | The contact's phone number                                | Y    | Y     |
-| companyName            | string       | The name of the company the contact belongs to            | Y    | N     |
-| companyNumber          | string\|null | The company number for the company the contact belongs to | Y    | N     |
-| vatNumber              | string\|null | The VAT number for the company the contact belongs to     | Y    | N     |
-| defaultSalespersonName | string\|null | The name of the default salesperson for the contact       | Y    | N     |
-| crmId                  | string\|null | The unique identifier in the CRM system                   | Y    | Y     |
-| created                | string       | The date the contact was created                          | Y    | N     |
-| updated                | string       | The date the contact was last updated                     | Y    | N     |
-| company                | relationship | The company the contact belongs to                        | Y    | Y     | Y        |
-| defaultSalesperson     | relationship | The default salesperson of the associated company         | Y    | N     |
-| customFieldData        | relationship | The data relating to custom fields owned by the contact   | Y    | Y     |
+| Field                  | Type             | Description                                               | Read | Write | Required |
+|------------------------|------------------|-----------------------------------------------------------|------|-------|----------|
+| id                     | int              | Unique identifier                                         | Y    | N     |
+| fullName               | string           | Full name of the contact                                  | Y    | Y     | Y        |
+| emailAddress           | string&#124;null | The contact's email address                               | Y    | Y     |
+| phoneNumber            | string&#124;null | The contact's phone number                                | Y    | Y     |
+| companyName            | string           | The name of the company the contact belongs to            | Y    | N     |
+| companyNumber          | string&#124;null | The company number for the company the contact belongs to | Y    | N     |
+| vatNumber              | string&#124;null | The VAT number for the company the contact belongs to     | Y    | N     |
+| defaultSalespersonName | string&#124;null | The name of the default salesperson for the contact       | Y    | N     |
+| crmId                  | string&#124;null | The unique identifier in the CRM system                   | Y    | Y     |
+| created                | string           | The date the contact was created                          | Y    | N     |
+| updated                | string           | The date the contact was last updated                     | Y    | N     |
+| company                | relationship     | The company the contact belongs to                        | Y    | Y     | Y        |
+| defaultSalesperson     | relationship     | The default salesperson of the associated company         | Y    | N     |
+| customFieldData        | relationship     | The data relating to custom fields owned by the contact   | Y    | Y     |
 
 ## Contact Relationships
 
@@ -119,12 +119,12 @@ When creating or updating contacts, the following validation rules will be appli
 
 NOTE: Field value types must conform to the types specified in the field list above.
 
-| Field                   | Rule                                          |
-|-------------------------|-----------------------------------------------|
-| isCustomer & isSupplier | * One or both flags must be `true`            |
-| fullName                | * Required<br/> * Max 200 characters          |
-| emailAddress            | * Must be valid email address                 |
-| phoneNumber             | * Must be valid phone number                  |
-| crmId                   | * Max 255 characters                          |
-| company                 | * Required<br/> * Must be a valid company IRI |
-| customFieldData         | TODO: Add validation rules for custom fields  |
+| Field                   | Rule                                             |
+|-------------------------|--------------------------------------------------|
+| isCustomer & isSupplier | * One or both flags must be `true`               |
+| fullName                | * Required<br/> * Max 200 characters             |
+| emailAddress            | * Must be valid email address                    |
+| phoneNumber             | * Must be valid phone number                     |
+| crmId                   | * Max 255 characters                             |
+| company                 | * Required<br/> * Must be a valid company IRI    |
+| customFieldData         | _See custom fields section for validation rules_ |

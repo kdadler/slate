@@ -98,12 +98,24 @@ object and contains both an `options` value and `optionsSource` value.
 
 ## Custom Field Data Fields
 
-> Example custom field data payload
+> Example entity response
+
 ```json
 {
   "customFieldData": [
     {"customFieldId": 1, "value": "GR", "transformedValue": "Greece"},
     {"customFieldId": 2, "value": "My custom value", "transformedValue": "My custom value"}
+  ]
+}
+```
+
+> Example entity request
+
+```json
+{
+  "customFieldData": [
+    {"customFieldId": 1, "value": "GR"},
+    {"customFieldId": 2, "value": "My custom value"}
   ]
 }
 ```

@@ -156,35 +156,35 @@ Customer and supplier records.
 
 > Field list
 
-| Field               | Type         | Description                                    | Read | Write | Required | Notes                             |
-|---------------------|--------------|------------------------------------------------|------|-------|----------|-----------------------------------| 
-| id                  | int          | Unique identifier                              | Y    | N     |
-| isCustomer          | bool         | Is the company a customer?                     | Y    | Y     |          | Defaults to `false`               |
-| isSupplier          | bool         | Is the company a supplier?                     | Y    | Y     |          | Defaults to `false`               |
-| companyName         | string       | The company's name                             | Y    | Y     | Y        |
-| companyNumber       | string\|null | The company number                             | Y    | Y     |
-| companyType         | string\|null | The company's type                             | Y    | Y     |
-| emailAddress        | string\|null | The company's email address                    | Y    | Y     |
-| vatNumber           | string\|null | The VAT number                                 | Y    | Y     |
-| eoriNumber          | string\|null | The company's EORI number                      | Y    | Y     |
-| taxCode             | string\|null | The company's tax code                         | Y    | Y     |
-| dutchVatTerm        | string\|null | The company's Dutch VAT term                   | Y    | Y     |
-| regionOfOperation   | string\|null | The company's region of operation              | Y    | Y     |
-| phoneNumber         | string\|null | The company's phone number                     | Y    | Y     |
-| currency            | string\|null | The company's currency                         | Y    | Y     |
-| creditLimit         | string\|null | The company's credit limit                     | Y    | Y     |
-| invoiceAddressData  | object\|null | Content of the associated invoice address      | Y    | N     |
-| deliveryAddressData | array        | Content of the associated delivery addresses   | Y    | N     |
-| crmId               | string\|null | The unique identifier in the CRM system        | Y    | Y     |
-| created             | string       | The date and time the company was created      | Y    | N     |
-| updated             | string       | The date and time the company was last updated | Y    | N     |
-| customFieldData     | array        | Values associated with the custom fields       | Y    | Y     |
-| defaultSalesperson  | relationship | The default salesperson for the company        | Y    | Y     |
-| primaryContact      | relationship | The company's primary contact                  | Y    | N     |          | Set this via the contact resource |
-| paymentTerm         | relationship | The company's default payment term             | Y    | Y     |
-| deliveryTerm        | relationship | The company's default delivery term            | Y    | Y     |
-| invoiceAddress      | relationship | The associated invoice address                 | Y    | N     |          | Set this via the address resource |
-| deliveryAddresses   | relationship | The associated delivery addresses              | Y    | N     |          | Set this via the address resource |
+| Field               | Type             | Description                                    | Read | Write | Required | Notes                             |
+|---------------------|------------------|------------------------------------------------|------|-------|----------|-----------------------------------| 
+| id                  | int              | Unique identifier                              | Y    | N     |
+| isCustomer          | bool             | Is the company a customer?                     | Y    | Y     |          | Defaults to `false`               |
+| isSupplier          | bool             | Is the company a supplier?                     | Y    | Y     |          | Defaults to `false`               |
+| companyName         | string           | The company's name                             | Y    | Y     | Y        |
+| companyNumber       | string&#124;null | The company number                             | Y    | Y     |
+| companyType         | string&#124;null | The company's type                             | Y    | Y     |
+| emailAddress        | string&#124;null | The company's email address                    | Y    | Y     |
+| vatNumber           | string&#124;null | The VAT number                                 | Y    | Y     |
+| eoriNumber          | string&#124;null | The company's EORI number                      | Y    | Y     |
+| taxCode             | string&#124;null | The company's tax code                         | Y    | Y     |
+| dutchVatTerm        | string&#124;null | The company's Dutch VAT term                   | Y    | Y     |
+| regionOfOperation   | string&#124;null | The company's region of operation              | Y    | Y     |
+| phoneNumber         | string&#124;null | The company's phone number                     | Y    | Y     |
+| currency            | string&#124;null | The company's currency                         | Y    | Y     |
+| creditLimit         | string&#124;null | The company's credit limit                     | Y    | Y     |
+| invoiceAddressData  | object&#124;null | Content of the associated invoice address      | Y    | N     |
+| deliveryAddressData | array            | Content of the associated delivery addresses   | Y    | N     |
+| crmId               | string&#124;null | The unique identifier in the CRM system        | Y    | Y     |
+| created             | string           | The date and time the company was created      | Y    | N     |
+| updated             | string           | The date and time the company was last updated | Y    | N     |
+| customFieldData     | array            | Values associated with the custom fields       | Y    | Y     |
+| defaultSalesperson  | relationship     | The default salesperson for the company        | Y    | Y     |
+| primaryContact      | relationship     | The company's primary contact                  | Y    | N     |          | Set this via the contact resource |
+| paymentTerm         | relationship     | The company's default payment term             | Y    | Y     |
+| deliveryTerm        | relationship     | The company's default delivery term            | Y    | Y     |
+| invoiceAddress      | relationship     | The associated invoice address                 | Y    | N     |          | Set this via the address resource |
+| deliveryAddresses   | relationship     | The associated delivery addresses              | Y    | N     |          | Set this via the address resource |
 
 ## Company Relationships
 
@@ -229,7 +229,7 @@ NOTE: Field value types must conform to the types specified in the field list ab
 | currency                | * Must be one of: `GBP`, `EUR`, `USD`                                                                                              |
 | creditLimit             | * Max 255 characters                                                                                                               |
 | crmId                   | * Max 255 characters                                                                                                               |
-| customFieldData         | TODO: Add validation rules for custom fields                                                                                       |
+| customFieldData         | _See custom fields section for validation rules_                                                                                   |
 | defaultSalesperson      | * Must be a valid user IRI                                                                                                         |
 | paymentTerm             | * Must be a valid payment term IRI                                                                                                 |
 | deliveryTerm            | * Must be a valid delivery term IRI                                                                                                |

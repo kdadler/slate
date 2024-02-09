@@ -84,7 +84,7 @@ Records of addresses.
 | crmId          | string       | The unique identifier in the CRM system | Y    | Y     |
 | created        | string       | The date the record was created         | Y    |       |
 | updated        | string       | The date the record was last updated    | Y    |       |
-| company        | relationship | The company the address belongs to      | N    | Y     |
+| company        | relationship | The company the address belongs to      | Y    | Y     |
 
 ## Address Relationships
 
