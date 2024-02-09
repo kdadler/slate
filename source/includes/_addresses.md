@@ -117,15 +117,15 @@ When creating or updating addresses, the following validation rules will be appl
 
 NOTE: Field value types must conform to the types specified in the field list above.
 
-| Field          | Rule                                                                                                                                                 |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| addressType    | * Required<br/> * Value must be `2` (invoice) or `3` (delivery)<br/> * Only 1 address allowed per-company with a value of `2`                        |
-| isPrimary      | * Required<br/> * Must be `true` for invoice addresses<br/> * Only 1 delivery address per company permitted with a `true` value                      |
-| addressLineOne | * Required<br/> * Must not be empty<br/> * Max 300 characters                                                                                        |
-| addressLineTwo | * Max 300 characters                                                                                                                                 |
-| townCity       | * Required<br/> * Must not be empty<br/> * Max 150 characters                                                                                        |
-| region         | * Max 150 characters                                                                                                                                 |
-| postcode       | * Required<br/> * Must not be empty<br/> * Max 15 characters                                                                                         |
-| country        | * Required<br/> * Must not be empty<br/> * Must be an ISO 3166 country name or A2 code: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes |
-| crmId          | * Max 255 characters                                                                                                                                 |
-| company        | * Must be a valid company IRI                                                                                                                        |
+| Field          | Rule                                                                                                                                                   |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| addressType    | * Required<br/> * Value must be `2` (invoice) or `3` (delivery)<br/> * Only 1 address allowed per-company with a value of `2`                          |
+| isPrimary      | * Required<br/> * Must be `true` for invoice addresses<br/> * Only 1 delivery address per company permitted with a `true` value                        |
+| addressLineOne | * Required<br/> * Must not be empty<br/> * Max 300 characters                                                                                          |
+| addressLineTwo | * Max 300 characters                                                                                                                                   |
+| townCity       | * Required<br/> * Must not be empty<br/> * Max 150 characters                                                                                          |
+| region         | * Max 150 characters                                                                                                                                   |
+| postcode       | * Required<br/> * Must not be empty<br/> * Max 15 characters                                                                                           |
+| country        | * Required<br/> * Must not be empty<br/> * Must be an [ISO 3166 country name](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) or A2 code |
+| crmId          | * Max 255 characters                                                                                                                                   |
+| company        | * Must be a valid company IRI                                                                                                                          |
