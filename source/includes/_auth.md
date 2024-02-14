@@ -11,6 +11,12 @@ request must include the following headers:
 * Accept: application/api
 * Content-Type: application/api
 
+> Token URL
+
+```
+https://{environment}.beautynet.co/token
+```
+
 > Example token request body
 
 ```json

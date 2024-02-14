@@ -29,11 +29,21 @@ WIP version of the Yoda public API documentation.
 
 The Yoda API follows a RESTful design.
 
-> URL
+> URL Structure
 
 ```
-{base_url}/api/v1/{entity_type}(/{id})
+{environment}.beautynet.co/api/v1/{entity_type}(/{id})
 ```
+
+## Base URL
+
+3 environments will be available, however currently only the test is implemented. The base URLs for these environments are:
+
+- Test: `https://apitest.beautynet.co`
+- UAT _(TBC)_: `https://apiuat.beautynet.co`
+- Production _(TBC)_: `https://api.beautynet.co`
+
+The API is accessed over HTTPS. Once authentication has been successful, all API routes are prefixed with `/api/v1`.
 
 > Headers
 
