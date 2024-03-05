@@ -163,10 +163,15 @@ Sales that are at the negotiation stage with the customer.
 
 ## Sales Negotiation Query Parameters
 
-| Name            | Type   | Match | Default | Description                                                    |
-|-----------------|--------|-------|---------|----------------------------------------------------------------|
-| contact         | string | exact | null    | The contact that the sales negotiation must be associated with |
-| status          | string | exact | null    | Specify the status of the sales negotiations to be returned    |
-| order\[created] | string | exact | asc     | Order the results by created date                              |
-| itemsPerPage    | int    | exact | 25      | The number of items to return per page                         |
-| page            | int    | exact | 1       | The page of results to return                                  |
+| Filter          | Type   | Match   | Default | Description                                                               |
+|-----------------|--------|---------|---------|---------------------------------------------------------------------------|
+| contact         | int    | exact   | null    | The ID of the contact that the sales negotiations must be associated with |
+| contact.company | int    | exact   | null    | The ID of the company that the sales negotiations must be associated with |                                                                      
+| salesPerson.id  | int    | exact   | null    | The ID of the sales person that must own the sales negotiations           |
+| status          | string | exact   | null    | Specify the status of the sales negotiations to be returned               |
+| currencyCode    | string | exact   | null    | The currency that the sales negotiations must have                        |
+| reference       | string | partial | null    | Fuzzy match against the sales negotiation's reference field               |
+| id              | string | partial | null    | Fuzzy match against the sales negotiation's ID field                      |
+| order\[created] | string | exact   | asc     | Order the results by created date                                         |
+| itemsPerPage    | int    | exact   | 25      | The number of items to return per page                                    |
+| page            | int    | exact   | 1       | The page of results to return                                             |
