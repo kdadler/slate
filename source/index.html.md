@@ -15,7 +15,9 @@ includes:
   - customFields
   - deliveryTerms
   - paymentTerms
+  - purchaseOrders
   - salesNegotiations
+  - salesOrders
   - users
 
 search: true

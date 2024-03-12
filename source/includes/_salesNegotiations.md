@@ -19,7 +19,7 @@ Sales that are at the negotiation stage with the customer.
 ```json
 {
   "id": "/api/v1/sales-negotiations/1",
-  "type": "SalesNegotiationDataContainer",
+  "type": "SalesNegotiation",
   "attributes": {
     "id": 1,
     "currencyCode": "GBP",
