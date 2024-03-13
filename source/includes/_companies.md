@@ -229,7 +229,6 @@ NOTE: Field value types must conform to the types specified in the field list ab
 | taxCode                 | * Max 50 characters                                                                 | PUT, POST |
 | dutchVatTerm            | * Max 50 characters                                                                 | PUT, POST | 
 | regionOfOperation       | * Max 50 characters                                                                 | PUT, POST |
-| phoneNumber             | * Must be a valid phone number                                                      | PUT, POST |
 | currency                | * Must be one of: `GBP`, `EUR`, `USD`                                               | PUT, POST |
 | creditLimit             | * Max 255 characters                                                                | PUT, POST |
 | crmId                   | * Max 255 characters                                                                | PUT, POST |

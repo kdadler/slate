@@ -123,13 +123,12 @@ When creating or updating contacts, the following validation rules will be appli
 
 NOTE: Field value types must conform to the types specified in the field list above.
 
-| Field           | Rule                                                        | Operation |
-|-----------------|-------------------------------------------------------------|-----------|
-| isPrimary       | * Required<br/> * A company may only have 1 primary contact | PUT, POST |
-| fullName        | * Required<br/> * Max 200 characters                        | PUT, POST |
-| emailAddress    | * Must be valid email address                               | PUT, POST |
-| phoneNumber     | * Must be valid phone number                                | PUT, POST |
-| crmId           | * Max 255 characters                                        | PUT, POST |
-| company         | * Required<br/> * Must be a valid company IRI               | PUT, POST |
-| customFieldData | _See custom fields section for validation rules_            | PUT, POST |
-| -               | Contact must not be associated with any offers or orders    | DELETE    |
+| Field           | Rule                                                     | Operation |
+|-----------------|----------------------------------------------------------|-----------|
+| isPrimary       | * A company may only have 1 primary contact              | PUT, POST |
+| fullName        | * Required<br/> * Max 200 characters                     | PUT, POST |
+| emailAddress    | * Must be valid email address                            | PUT, POST |
+| crmId           | * Max 255 characters                                     | PUT, POST |
+| company         | * Required<br/> * Must be a valid company IRI            | PUT, POST |
+| customFieldData | _See custom fields section for validation rules_         | PUT, POST |
+| -               | Contact must not be associated with any offers or orders | DELETE    |
