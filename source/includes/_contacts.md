@@ -39,7 +39,8 @@ Points of contacts with customers/suppliers.
     "customFieldData": [
       {"customFieldId": 1, "value": "GR", "transformedValue": "Greece"},
       {"customFieldId": 2, "value": "My custom value", "transformedValue": "My custom value"}
-    ]
+    ],
+    "isDeletable": false
   },
   "relationships": {
     "company": {
@@ -92,6 +93,7 @@ Points of contacts with customers/suppliers.
 | crmId                  | string&#124;null | The unique identifier in the CRM system                    | Y    | Y     |
 | created                | string           | The date the contact was created                           | Y    | N     |
 | updated                | string           | The date the contact was last updated                      | Y    | N     |
+| isDeletable            | boolean          | Whether the contact can be deleted                         | Y    | N     |
 | company                | relationship     | The company the contact belongs to                         | Y    | Y     | Y        |
 | defaultSalesperson     | relationship     | The default salesperson of the associated company          | Y    | N     |
 | customFieldData        | relationship     | The data relating to custom fields owned by the contact    | Y    | Y     |
@@ -121,12 +123,13 @@ When creating or updating contacts, the following validation rules will be appli
 
 NOTE: Field value types must conform to the types specified in the field list above.
 
-| Field           | Rule                                                        |
-|-----------------|-------------------------------------------------------------|
-| isPrimary       | * Required<br/> * A company may only have 1 primary contact |
-| fullName        | * Required<br/> * Max 200 characters                        |
-| emailAddress    | * Must be valid email address                               |
-| phoneNumber     | * Must be valid phone number                                |
-| crmId           | * Max 255 characters                                        |
-| company         | * Required<br/> * Must be a valid company IRI               |
-| customFieldData | _See custom fields section for validation rules_            |
+| Field           | Rule                                                        | Operation |
+|-----------------|-------------------------------------------------------------|-----------|
+| isPrimary       | * Required<br/> * A company may only have 1 primary contact | PUT, POST |
+| fullName        | * Required<br/> * Max 200 characters                        | PUT, POST |
+| emailAddress    | * Must be valid email address                               | PUT, POST |
+| phoneNumber     | * Must be valid phone number                                | PUT, POST |
+| crmId           | * Max 255 characters                                        | PUT, POST |
+| company         | * Required<br/> * Must be a valid company IRI               | PUT, POST |
+| customFieldData | _See custom fields section for validation rules_            | PUT, POST |
+| -               | Contact must not be associated with any offers or orders    | DELETE    |

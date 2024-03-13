@@ -80,7 +80,8 @@ Customer and supplier records.
       "customFieldData": [
         {"customFieldId": 1, "value": "GR", "transformedValue": "Greece"},
         {"customFieldId": 2, "value": "My custom value", "transformedValue": "My custom value"}
-      ]
+      ],
+      "isDeletable": true
     },
     "relationships": {
       "primaryContact": {
@@ -181,6 +182,7 @@ Customer and supplier records.
 | created             | string           | The date and time the company was created      | Y    | N     |
 | updated             | string           | The date and time the company was last updated | Y    | N     |
 | customFieldData     | array            | Values associated with the custom fields       | Y    | Y     |
+| isDeletable         | boolean          | Whether the company can be deleted             | Y    | N     |
 | defaultSalesperson  | relationship     | The default salesperson for the company        | Y    | Y     |
 | primaryContact      | relationship     | The company's primary contact                  | Y    | N     |          | Set this via the contact resource |
 | paymentTerm         | relationship     | The company's default payment term             | Y    | Y     |
@@ -215,26 +217,27 @@ When creating or updating companies, the following validation rules will be appl
 
 NOTE: Field value types must conform to the types specified in the field list above.
 
-| Field                   | Rule                                                                                |
-|-------------------------|-------------------------------------------------------------------------------------|
-| isCustomer & isSupplier | * One or both flags must be `true`                                                  |
-| companyName             | * Required<br/> * Must not be empty<br/> * Must be unique<br/> * Max 500 characters |
-| companyNumber           | * Max 50 characters                                                                 |
-| companyType             | * Must be a valid company type (see list below)                                     |
-| emailAddress            | * Must be a valid email address                                                     |
-| vatNumber               | * Max 50 characters                                                                 |
-| eoriNumber              | * Max 50 characters                                                                 |
-| taxCode                 | * Max 50 characters                                                                 |
-| dutchVatTerm            | * Max 50 characters                                                                 |
-| regionOfOperation       | * Max 50 characters                                                                 |
-| phoneNumber             | * Must be a valid phone number                                                      |
-| currency                | * Must be one of: `GBP`, `EUR`, `USD`                                               |
-| creditLimit             | * Max 255 characters                                                                |
-| crmId                   | * Max 255 characters                                                                |
-| customFieldData         | _See custom fields section for validation rules_                                    |
-| defaultSalesperson      | * Must be a valid user IRI                                                          |
-| paymentTerm             | * Must be a valid payment term IRI                                                  |
-| deliveryTerm            | * Must be a valid delivery term IRI                                                 |
+| Field                   | Rule                                                                                | Operation |
+|-------------------------|-------------------------------------------------------------------------------------|-----------|
+| isCustomer & isSupplier | * One or both flags must be `true`                                                  | PUT, POST |
+| companyName             | * Required<br/> * Must not be empty<br/> * Must be unique<br/> * Max 500 characters | PUT, POST |
+| companyNumber           | * Max 50 characters                                                                 | PUT, POST |
+| companyType             | * Must be a valid company type (see list below)                                     | PUT, POST |
+| emailAddress            | * Must be a valid email address                                                     | PUT, POST | 
+| vatNumber               | * Max 50 characters                                                                 | PUT, POST |
+| eoriNumber              | * Max 50 characters                                                                 | PUT, POST |
+| taxCode                 | * Max 50 characters                                                                 | PUT, POST |
+| dutchVatTerm            | * Max 50 characters                                                                 | PUT, POST | 
+| regionOfOperation       | * Max 50 characters                                                                 | PUT, POST |
+| phoneNumber             | * Must be a valid phone number                                                      | PUT, POST |
+| currency                | * Must be one of: `GBP`, `EUR`, `USD`                                               | PUT, POST |
+| creditLimit             | * Max 255 characters                                                                | PUT, POST |
+| crmId                   | * Max 255 characters                                                                | PUT, POST |
+| customFieldData         | _See custom fields section for validation rules_                                    | PUT, POST |
+| defaultSalesperson      | * Must be a valid user IRI                                                          | PUT, POST |
+| paymentTerm             | * Must be a valid payment term IRI                                                  | PUT, POST |
+| deliveryTerm            | * Must be a valid delivery term IRI                                                 | PUT, POST |
+| -                       | Company must not be associated with any offers or orders                            | DELETE    |
 
 ## Company Types
 
