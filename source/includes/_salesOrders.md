@@ -22,6 +22,7 @@ Sales that are at the order stage.
   "type": "SalesOrder",
   "attributes": {
     "id": "SO0000002",
+    "salesNegotiationFormattedId": "SN-000-002",
     "additionalInfo": "...",
     "buyCurrency": "GBP",
     "cancellationReason": "Customer declined order",
@@ -133,44 +134,52 @@ Sales that are at the order stage.
         "id": "/api/v1/users/2",
         "type": "User"
       }
+    },
+    "salesNegotiation": {
+      "data": {
+        "id": "/api/v1/sales-negotiations/2",
+        "type": "SalesNegotiation"
+      }
     }
   }
 }
 ```
 
-| Field                    | Type    | Description                                                                            |
-|--------------------------|---------|----------------------------------------------------------------------------------------|
-| id                       | string  | Unique identifier                                                                      |
-| additionalInfo           | string  | Additional information that can be included when sending documents for the sales order |
-| buyCurrency              | string  | The currency that goods are expected to be bought in                                   |
-| cancellationReason       | string  | The reason that the order was cancelled                                                |
-| conditionsOfSale         | array   | The conditions attached to the sale                                                    |
-| contactName              | string  | The name of the contact for the order                                                  |
-| companyId                | integer | ID of the associated company record                                                    |
-| companyName              | string  | The name of the company for the order                                                  |
-| created                  | string  | The datetime of the order's creation                                                   |
-| customerConditionsOfSale | array   | The conditions attached to the sale in a customer-friendly format                      |
-| deliveryTermLabel        | string  | The label of the delivery term for the order                                           |
-| destinationCountry       | string  | The name of the country that the sale is being made to                                 | 
-| discountCriteria         | array   | Criteria that must be met for bulk discounts to be applied                             |
-| exchangeRate             | float   | The rate of exchange between the sale and buy currencies                               |
-| expectedMonthOfInvoice   | integer | The month that the order is expected to be fulfilled in                                |
-| invoiceDate              | string  | The date that the order was invoiced                                                   |
-| invoiceId                | string  | The ID of the associated invoice                                                       |
-| packGoodsSkipped         | boolean | Flag: Was the pack goods stage skipped for this order?                                 |
-| paymentDate              | string  | The date that payment was made                                                         |
-| paymentTermLabel         | string  | The label of the payment term for the order                                            |
-| reference                | string  | The order's reference                                                                  |
-| salesPersonName          | string  | The name of the salesperson that owns the order                                        |
-| sellCurrency             | string  | Currency the sale is being made in                                                     |
-| status                   | integer | The status of the order                                                                |
-| statusLabel              | string  | The human readable label of the order's status                                         |
-| updated                  | string  | The datetime that the order was last updated                                           |
-| taxCodeId                | integer | The ID of the associated tax code entity                                               |
-| taxRate                  | integer | The tax rate                                                                           |
-| totals                   | array   | The order's total values                                                               |
-| contact                  | Contact | Contact the sale is being made to                                                      |                                                     |
-| salesPerson              | User    | User that owns the sale                                                                |
+| Field                       | Type             | Description                                                                            |
+|-----------------------------|------------------|----------------------------------------------------------------------------------------|
+| id                          | string           | Unique identifier                                                                      |
+| salesNegotiationFormattedId | string\|null     | The ID of the associated sales negotiation, formatted for display                      |
+| additionalInfo              | string           | Additional information that can be included when sending documents for the sales order |
+| buyCurrency                 | string           | The currency that goods are expected to be bought in                                   |
+| cancellationReason          | string           | The reason that the order was cancelled                                                |
+| conditionsOfSale            | array            | The conditions attached to the sale                                                    |
+| contactName                 | string           | The name of the contact for the order                                                  |
+| companyId                   | integer          | ID of the associated company record                                                    |
+| companyName                 | string           | The name of the company for the order                                                  |
+| created                     | string           | The datetime of the order's creation                                                   |
+| customerConditionsOfSale    | array            | The conditions attached to the sale in a customer-friendly format                      |
+| deliveryTermLabel           | string           | The label of the delivery term for the order                                           |
+| destinationCountry          | string           | The name of the country that the sale is being made to                                 | 
+| discountCriteria            | array            | Criteria that must be met for bulk discounts to be applied                             |
+| exchangeRate                | float            | The rate of exchange between the sale and buy currencies                               |
+| expectedMonthOfInvoice      | integer          | The month that the order is expected to be fulfilled in                                |
+| invoiceDate                 | string           | The date that the order was invoiced                                                   |
+| invoiceId                   | string           | The ID of the associated invoice                                                       |
+| packGoodsSkipped            | boolean          | Flag: Was the pack goods stage skipped for this order?                                 |
+| paymentDate                 | string           | The date that payment was made                                                         |
+| paymentTermLabel            | string           | The label of the payment term for the order                                            |
+| reference                   | string           | The order's reference                                                                  |
+| salesPersonName             | string           | The name of the salesperson that owns the order                                        |
+| sellCurrency                | string           | Currency the sale is being made in                                                     |
+| status                      | integer          | The status of the order                                                                |
+| statusLabel                 | string           | The human readable label of the order's status                                         |
+| updated                     | string           | The datetime that the order was last updated                                           |
+| taxCodeId                   | integer          | The ID of the associated tax code entity                                               |
+| taxRate                     | integer          | The tax rate                                                                           |
+| totals                      | array            | The order's total values                                                               |
+| contact                     | Contact          | Contact the sale is being made to                                                      |                                                     |
+| salesPerson                 | User             | User that owns the sale                                                                |
+| salesNegotiation            | SalesNegotiation | The associated sales negotiation entity                                                |
 
 ## Sales Order Totals Field
 

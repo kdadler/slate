@@ -22,6 +22,8 @@ Sales that are at the negotiation stage with the customer.
   "type": "SalesNegotiation",
   "attributes": {
     "id": 1,
+    "formattedId": "SN-000-001",
+    "salesOrderId": "SO0000001",
     "currencyCode": "GBP",
     "invoiceId": null,
     "invoiceDate": null,
@@ -130,23 +132,33 @@ Sales that are at the negotiation stage with the customer.
       }
     ],
     "created": "2020-04-06T09:36:35.018Z"
+  },
+  "relationships": {
+    "salesOrder": {
+      "data": {
+        "id": "/api/v1/sales-orders/SO0000001",
+        "type": "SalesOrder"
+      }
+    }
   }
 }
 ```
 
-| Field                    | Type        | Description                                                              |
-|--------------------------|-------------|--------------------------------------------------------------------------|
-| id                       | string      | Unique identifier                                                        |
-| currencyCode             | string      | The currency of the sale                                                 |
-| invoiceId                | null        | Always NULL. Included for compatibility with the sales order API format. |
-| invoiceDate              | null        | Always NULL. Included for compatibility with the sales order API format. |
-| reference                | string/null | Custom reference                                                         |
-| status                   | string      | The human-readable status for the sales negotiation                      |
-| conditionsOfSale         | array       | The conditions of sale                                                   |
-| customerConditionsOfSale | array       | The above conditions formatted for display to the customer               |
-| totals                   | object      | Sales negotiation's calculated totals, split into categories (see below) |
-| changes                  | object      | A list of changes made to the entity since the basket was submitted      |
-| created                  | string      | Datetime that the sales negotiation was created                          |
+| Field                    | Type         | Description                                                              |
+|--------------------------|--------------|--------------------------------------------------------------------------|
+| id                       | integer      | Unique identifier                                                        |
+| formattedId              | string       | The unique identifier formatted for display                              |
+| salesOrderId             | string\|null | The ID of the sales order that the sales negotiation is associated with  |
+| currencyCode             | string       | The currency of the sale                                                 |
+| invoiceId                | null         | Always NULL. Included for compatibility with the sales order API format. |
+| invoiceDate              | null         | Always NULL. Included for compatibility with the sales order API format. |
+| reference                | string\|null | Custom reference                                                         |
+| status                   | string       | The human-readable status for the sales negotiation                      |
+| conditionsOfSale         | array        | The conditions of sale                                                   |
+| customerConditionsOfSale | array        | The above conditions formatted for display to the customer               |
+| totals                   | object       | Sales negotiation's calculated totals, split into categories (see below) |
+| changes                  | object       | A list of changes made to the entity since the basket was submitted      |
+| created                  | string       | Datetime that the sales negotiation was created                          |
 
 ## Sales Negotiation Total Fields
 
