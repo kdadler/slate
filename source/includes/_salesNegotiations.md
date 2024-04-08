@@ -148,11 +148,11 @@ Sales that are at the negotiation stage with the customer.
 |--------------------------|--------------|--------------------------------------------------------------------------|
 | id                       | integer      | Unique identifier                                                        |
 | formattedId              | string       | The unique identifier formatted for display                              |
-| salesOrderId             | string\|null | The ID of the sales order that the sales negotiation is associated with  |
+| salesOrderId             | string&#124;null | The ID of the sales order that the sales negotiation is associated with  |
 | currencyCode             | string       | The currency of the sale                                                 |
 | invoiceId                | null         | Always NULL. Included for compatibility with the sales order API format. |
 | invoiceDate              | null         | Always NULL. Included for compatibility with the sales order API format. |
-| reference                | string\|null | Custom reference                                                         |
+| reference                | string&#124;null | Custom reference                                                         |
 | status                   | string       | The human-readable status for the sales negotiation                      |
 | conditionsOfSale         | array        | The conditions of sale                                                   |
 | customerConditionsOfSale | array        | The above conditions formatted for display to the customer               |

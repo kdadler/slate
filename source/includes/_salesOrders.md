@@ -148,7 +148,7 @@ Sales that are at the order stage.
 | Field                       | Type             | Description                                                                            |
 |-----------------------------|------------------|----------------------------------------------------------------------------------------|
 | id                          | string           | Unique identifier                                                                      |
-| salesNegotiationFormattedId | string\|null     | The ID of the associated sales negotiation, formatted for display                      |
+| salesNegotiationFormattedId | string&#124;null     | The ID of the associated sales negotiation, formatted for display                      |
 | additionalInfo              | string           | Additional information that can be included when sending documents for the sales order |
 | buyCurrency                 | string           | The currency that goods are expected to be bought in                                   |
 | cancellationReason          | string           | The reason that the order was cancelled                                                |
