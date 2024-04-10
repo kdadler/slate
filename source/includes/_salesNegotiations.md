@@ -131,6 +131,8 @@ Sales that are at the negotiation stage with the customer.
         }
       }
     ],
+    "contactName": "Mr Contact",
+    "companyName": "PC World",
     "created": "2020-04-06T09:36:35.018Z"
   },
   "relationships": {
@@ -144,21 +146,23 @@ Sales that are at the negotiation stage with the customer.
 }
 ```
 
-| Field                    | Type         | Description                                                              |
-|--------------------------|--------------|--------------------------------------------------------------------------|
-| id                       | integer      | Unique identifier                                                        |
-| formattedId              | string       | The unique identifier formatted for display                              |
+| Field                    | Type             | Description                                                              |
+|--------------------------|------------------|--------------------------------------------------------------------------|
+| id                       | integer          | Unique identifier                                                        |
+| formattedId              | string           | The unique identifier formatted for display                              |
 | salesOrderId             | string&#124;null | The ID of the sales order that the sales negotiation is associated with  |
-| currencyCode             | string       | The currency of the sale                                                 |
-| invoiceId                | null         | Always NULL. Included for compatibility with the sales order API format. |
-| invoiceDate              | null         | Always NULL. Included for compatibility with the sales order API format. |
+| currencyCode             | string           | The currency of the sale                                                 |
+| invoiceId                | null             | Always NULL. Included for compatibility with the sales order API format. |
+| invoiceDate              | null             | Always NULL. Included for compatibility with the sales order API format. |
 | reference                | string&#124;null | Custom reference                                                         |
-| status                   | string       | The human-readable status for the sales negotiation                      |
-| conditionsOfSale         | array        | The conditions of sale                                                   |
-| customerConditionsOfSale | array        | The above conditions formatted for display to the customer               |
-| totals                   | object       | Sales negotiation's calculated totals, split into categories (see below) |
-| changes                  | object       | A list of changes made to the entity since the basket was submitted      |
-| created                  | string       | Datetime that the sales negotiation was created                          |
+| status                   | string           | The human-readable status for the sales negotiation                      |
+| conditionsOfSale         | array            | The conditions of sale                                                   |
+| customerConditionsOfSale | array            | The above conditions formatted for display to the customer               |
+| totals                   | object           | Sales negotiation's calculated totals, split into categories (see below) |
+| changes                  | object           | A list of changes made to the entity since the basket was submitted      |
+| contactName              | string           | The name of the contact for the negotiation                              |
+| companyName              | string           | The name of the company for the order                                    |
+| created                  | string           | Datetime that the sales negotiation was created                          |
 
 ## Sales Negotiation Total Fields
 
