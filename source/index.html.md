@@ -50,7 +50,7 @@ The Yoda API follows a RESTful design.
 ```json
 {
   "Accept": "application/vnd.api+json",
-  "Content-Type": "application/api"
+  "Content-Type": "application/json"
 }
 ```
 

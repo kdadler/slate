@@ -8,8 +8,8 @@ will provide you with a client ID and client secret.
 Once you have your credentials, you can get an access token by making a POST request to the `/token` endpoint. The
 request must include the following headers:
 
-* Accept: application/api
-* Content-Type: application/api
+* Accept: application/json
+* Content-Type: application/json
 
 > Token URL
 
