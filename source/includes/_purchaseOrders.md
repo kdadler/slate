@@ -40,6 +40,7 @@ Purchases that are at the order stage.
       "expectedMonthOfReceipt": 5,
       "goodsReceivedDate": "2020-04-06T09:36:35.018Z",
       "invoiceDate": "2020-04-06T09:36:35.018Z",
+      "invoiceNumber": "00087234682",
       "lineCount": 2,
       "nonZeroLineCount": 2,
       "paymentTermLabel": "20% up front",
@@ -51,14 +52,26 @@ Purchases that are at the order stage.
       "statusLabel": "Place Order",
       "taxRate": 0,
       "totals": {
-        "currencyCode": "GBP",
-        "buyingTotal": "11753",
-        "preTaxPriceAdjustmentTotal": "1154",
-        "taxTotal": "0",
-        "postTaxPriceAdjustmentTotal": "0",
-        "totalWithoutTax": "12907",
-        "totalWithTax": "12907"
+        "purchase": {
+          "currencyCode": "EUR",
+          "buyingTotal": "11753",
+          "preTaxPriceAdjustmentTotal": "1154",
+          "taxTotal": "0",
+          "postTaxPriceAdjustmentTotal": "0",
+          "totalWithoutTax": "12907",
+          "totalWithTax": "12907"
+        },
+        "GBP": {
+          "currencyCode": "GBP",
+          "buyingTotal": "11753",
+          "preTaxPriceAdjustmentTotal": "1154",
+          "taxTotal": "0",
+          "postTaxPriceAdjustmentTotal": "0",
+          "totalWithoutTax": "12907",
+          "totalWithTax": "12907"
+        }
       },
+      "publishedStatus": "Partial",
       "updated": "2020-04-06T09:36:35.018Z"
     },
     "relationships": {
@@ -73,38 +86,40 @@ Purchases that are at the order stage.
 }
 ```
 
-| Field                  | Type    | Description                                                             |
-|------------------------|---------|-------------------------------------------------------------------------|
-| id                     | string  | Unique identifier                                                       |
-| cancellationReason     | string  | The reason that the order was cancelled, if any                         |
-| companyId              | integer | The ID of the company supplying the order                               |
-| companyName            | string  | The name of the company supplying the order                             |
-| conditionsOfSale       | object  | The conditions associated with the purchase                             |
-| contactAddressData     | object  | An array of the contact address data                                    |
-| contactEmailAddress    | string  | The contact's email address                                             |
-| contactName            | string  | The name of the contact for the order                                   |
-| contactPhoneNumber     | string  | The contact's phone number                                              |
-| countryOfPurchaseCode  | string  | The ISO code of the country the purchase is being made from             |
-| countryOfPurchaseName  | string  | The name of the country the purchase is being made from                 |
-| created                | string  | Datetime that the order was created                                     |
-| currencyCode           | string  | ISO code of the currency the order has been placed in                   |
-| deliveryTermLabel      | string  | The human-readable label of the delivery term for the order             |
-| discountRate           | float   | The volume discount applied to the order                                |
-| expectedMonthOfReceipt | integer | The month that the order is expected to be received in                  |
-| goodsReceivedDate      | string  | Datetime that the goods were received                                   |
-| invoiceDate            | string  | Datetime that the invoice was created by the supplier                   |
-| lineCount              | integer | The number of lines the order holds                                     |
-| nonZeroLineCount       | integer | The number of lines the order holds that have a quantity greater than 0 |
-| paymentTermLabel       | string  | The human-readable label of the payment term for the order              |
-| publishedLineCount     | integer | The number of lines that have been published for pre-sale               |
-| purchaserName          | string  | The name of the purchaser that owns the order                           |
-| receivedLineCount      | integer | The number of lines that have been fully received into our warehouse    |
-| reference              | string  | The order's reference                                                   |
-| status                 | integer | The status of the order within its workflow                             |
-| statusLabel            | string  | The human-readable label of the order's status                          |
-| taxRate                | float   | The rate of tax applied to the order                                    |
-| totals                 | object  | Total value of order                                                    |
-| updated                | string  | Datetime that the order was last updated                                |
+| Field                  | Type    | Description                                                                      |
+|------------------------|---------|----------------------------------------------------------------------------------|
+| id                     | string  | Unique identifier                                                                |
+| cancellationReason     | string  | The reason that the order was cancelled, if any                                  |
+| companyId              | integer | The ID of the company supplying the order                                        |
+| companyName            | string  | The name of the company supplying the order                                      |
+| conditionsOfSale       | object  | The conditions associated with the purchase                                      |
+| contactAddressData     | object  | An array of the contact address data                                             |
+| contactEmailAddress    | string  | The contact's email address                                                      |
+| contactName            | string  | The name of the contact for the order                                            |
+| contactPhoneNumber     | string  | The contact's phone number                                                       |
+| countryOfPurchaseCode  | string  | The ISO code of the country the purchase is being made from                      |
+| countryOfPurchaseName  | string  | The name of the country the purchase is being made from                          |
+| created                | string  | Datetime that the order was created                                              |
+| currencyCode           | string  | ISO code of the currency the order has been placed in                            |
+| deliveryTermLabel      | string  | The human-readable label of the delivery term for the order                      |
+| discountRate           | float   | The volume discount applied to the order                                         |
+| expectedMonthOfReceipt | integer | The month that the order is expected to be received in                           |
+| goodsReceivedDate      | string  | Datetime that the goods were received                                            |
+| invoiceDate            | string  | Datetime that the invoice was created by the supplier                            |
+| invoiceNumber          | string  | Supplier invoice number for the purchase                                         |
+| lineCount              | integer | The number of lines the order holds                                              |
+| nonZeroLineCount       | integer | The number of lines the order holds that have a quantity greater than 0          |
+| paymentTermLabel       | string  | The human-readable label of the payment term for the order                       |
+| publishedLineCount     | integer | The number of lines that have been published for pre-sale                        |
+| purchaserName          | string  | The name of the purchaser that owns the order                                    |
+| receivedLineCount      | integer | The number of lines that have been fully received into our warehouse             |
+| reference              | string  | The order's reference                                                            |
+| status                 | integer | The status of the order within its workflow                                      |
+| statusLabel            | string  | The human-readable label of the order's status                                   |
+| taxRate                | float   | The rate of tax applied to the order                                             |
+| totals                 | object  | Total value of order broken down by currency                                     |
+| publishedStatus        | string  | The status of the lines published for the order. Will be 'All', 'Partial' or '-' |
+| updated                | string  | Datetime that the order was last updated                                         |
 
 ## Purchase Order Totals Field
 
