@@ -29,6 +29,7 @@ Sales that are at the negotiation stage with the customer.
     "invoiceDate": null,
     "reference": "ref001",
     "status": "Pending",
+    "expectedMonthOfSale": 10,
     "conditionsOfSale": [
       {
         "type": "deliveryTerms",
@@ -156,6 +157,7 @@ Sales that are at the negotiation stage with the customer.
 | invoiceDate              | null             | Always NULL. Included for compatibility with the sales order API format. |
 | reference                | string&#124;null | Custom reference                                                         |
 | status                   | string           | The human-readable status for the sales negotiation                      |
+| expectedMonthOfSale      | integer          | The number of the month when the negotiation is expected to be sold      |
 | conditionsOfSale         | array            | The conditions of sale                                                   |
 | customerConditionsOfSale | array            | The above conditions formatted for display to the customer               |
 | totals                   | object           | Sales negotiation's calculated totals, split into categories (see below) |
