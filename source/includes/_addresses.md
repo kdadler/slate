@@ -106,8 +106,8 @@ There are 2 permitted types of address as follows:
 
 | Token | Type     |
 |-------|----------|
-| 2     | Invoice  |
-| 3     | Delivery |
+| 2     | Delivery |
+| 3     | Invoice  |
 
 A company is only allowed a single invoice address. However, a company may have multiple delivery addresses as required.
 
